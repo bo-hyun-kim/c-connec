@@ -1,0 +1,79 @@
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.AssemblyReference.cache
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.g.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.member.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form3.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form4.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form5.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form6.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.help.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.Properties.Resources.resources
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.GenerateResource.cache
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.CoreCompileInputs.cache
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.exe.config
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.exe
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.pdb
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\EntityFramework.dll
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\System.Data.SQLite.dll
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\EntityFramework.xml
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\bin\Debug\System.Data.SQLite.xml
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.CopyComplete
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.exe
+C:\Users\k3hy2\Downloads\카페 포스기 2018 C#\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.pdb
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.exe.config
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.exe
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.pdb
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.dll
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.dll
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.xml
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.xml
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.AssemblyReference.cache
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.g.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.member.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form3.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form4.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form5.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form6.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.help.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.Properties.Resources.resources
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.GenerateResource.cache
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.CoreCompileInputs.cache
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.CopyComplete
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.exe
+C:\Users\k3hy2\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.pdb
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.exe.config
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.exe
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\윈프_과제_홀수반_김한영.pdb
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.dll
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.dll
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.xml
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\bin\Debug\System.Data.SQLite.xml
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.AssemblyReference.cache
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.SuggestedBindingRedirects.cache
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.g.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.member.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form3.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form4.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form5.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form6.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.help.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.Properties.Resources.resources
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.GenerateResource.cache
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.CoreCompileInputs.cache
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.csproj.CopyComplete
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.exe
+C:\Users\a5404\Desktop\윈프_과제프로젝트_홀수반_2018100927_김한영 (1)\윈프_과제프로젝트_홀수반_2018100927_김한영\WindowsFormsApp2\obj\Debug\윈프_과제_홀수반_김한영.pdb
