@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace WindowsFormsApp2
 {
     static class Program
-    {
+    {   //ㅅㄷㄴㅅ
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>
