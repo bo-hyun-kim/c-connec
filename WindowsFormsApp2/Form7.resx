@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox8.Text" xml:space="preserve">
-    <value>헬스장에 물품을 미리 구비하여 회원들이 필요한 물품을 대여 혹은 판매하는 시스템입니다.
-유니폼과 같은 경우에는 대여를 하며 경제적 이익을 챙길 수 있기에 대여를 결정하였고, 오른쪽에 있는 장비들은 판매 목적으로 준비하였습니다!
-재정비를 한다는 것은 물품을 다시 채워놓는다는 뜻이므로 재정비 버튼을 눌러 화면을 나갔다오면 물품이 다시 채워져 있게 설계하였습니다!
-</value>
-  </data>
 </root>

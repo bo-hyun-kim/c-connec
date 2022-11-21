@@ -29,7 +29,6 @@ namespace WindowsFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(help));
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -56,19 +55,21 @@ namespace WindowsFormsApp2
             this.tabControl2.Controls.Add(this.tabPage8);
             this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Controls.Add(this.tabPage10);
-            this.tabControl2.Location = new System.Drawing.Point(12, 12);
+            this.tabControl2.Location = new System.Drawing.Point(15, 14);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(423, 146);
+            this.tabControl2.Size = new System.Drawing.Size(529, 175);
             this.tabControl2.TabIndex = 3;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.textBox6);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Location = new System.Drawing.Point(4, 28);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(415, 117);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Size = new System.Drawing.Size(521, 143);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "기본";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -76,20 +77,22 @@ namespace WindowsFormsApp2
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(3, 3);
+            this.textBox6.Location = new System.Drawing.Point(4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(406, 111);
+            this.textBox6.Size = new System.Drawing.Size(506, 132);
             this.textBox6.TabIndex = 1;
             this.textBox6.Text = " 원하는 메뉴 버튼을 클릭하면 해당 메뉴에 대한 기능이 나옵니다.\r\n\r\n";
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.textBox7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Location = new System.Drawing.Point(4, 28);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(415, 117);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Size = new System.Drawing.Size(521, 143);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "회원 관리";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -97,10 +100,11 @@ namespace WindowsFormsApp2
             // textBox7
             // 
             this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(3, 3);
+            this.textBox7.Location = new System.Drawing.Point(4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(406, 111);
+            this.textBox7.Size = new System.Drawing.Size(506, 132);
             this.textBox7.TabIndex = 1;
             this.textBox7.Text = "회원들의 이름, 생년월일, 전화번호와 같은 신상정보를 기입하여 회원들을 등록하는 공간입니다.\r\n헬스장 이용기간을 체크하는 공간이다. 등록일과 종료" +
     "일을 설정하여 헬스장 이용에 착오가 없도록 한다.\r\n특이사항이 있는 회원들을 위해 내용에 특이사항을 기입한다.\r\n";
@@ -108,74 +112,80 @@ namespace WindowsFormsApp2
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.textBox8);
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Location = new System.Drawing.Point(4, 28);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(415, 117);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Size = new System.Drawing.Size(521, 143);
             this.tabPage8.TabIndex = 2;
-            this.tabPage8.Text = "등록 관리";
+            this.tabPage8.Text = "물품관리";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
             this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(3, 0);
+            this.textBox8.Location = new System.Drawing.Point(4, 0);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(406, 111);
+            this.textBox8.Size = new System.Drawing.Size(506, 132);
             this.textBox8.TabIndex = 1;
-            this.textBox8.Text = resources.GetString("textBox8.Text");
+            this.textBox8.Text = "헬스장의 물품을 관리하는 페이지입니다.";
             // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.textBox9);
-            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Location = new System.Drawing.Point(4, 28);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(415, 117);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Size = new System.Drawing.Size(521, 143);
             this.tabPage9.TabIndex = 3;
-            this.tabPage9.Text = "게시판";
+            this.tabPage9.Text = "매출관리";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // textBox9
             // 
             this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(3, 3);
+            this.textBox9.Location = new System.Drawing.Point(4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(406, 111);
+            this.textBox9.Size = new System.Drawing.Size(506, 132);
             this.textBox9.TabIndex = 1;
-            this.textBox9.Text = "공지사항이나 회원들의 불만사항 등을 빠른조치를 취하여 불만사항을 정리하는 공간이다.  \r\n\r\n";
+            this.textBox9.Text = "헬스장의 매출을 관리하는 페이지입니다.";
             // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.textBox10);
-            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Location = new System.Drawing.Point(4, 28);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(415, 117);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Size = new System.Drawing.Size(521, 143);
             this.tabPage10.TabIndex = 4;
-            this.tabPage10.Text = "일정 관리";
+            this.tabPage10.Text = "일정관리";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // textBox10
             // 
             this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(3, 3);
+            this.textBox10.Location = new System.Drawing.Point(4, 4);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(406, 111);
+            this.textBox10.Size = new System.Drawing.Size(506, 132);
             this.textBox10.TabIndex = 1;
-            this.textBox10.Text = "PT(트레이너 교육을 받는 시스템)를 받기 위해 일정을 조정하는 공간이다. \r\n일정을 조정하여 다른회원들과 시간이 겹치지 않도록 하기 위해서 사용" +
-    "되는 공간이다";
+            this.textBox10.Text = "회원들의 일정을 관리하는 페이지입니다.";
             // 
             // help
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 161);
+            this.ClientSize = new System.Drawing.Size(544, 193);
             this.Controls.Add(this.tabControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "help";
             this.Text = "Form7";
             this.tabControl2.ResumeLayout(false);
