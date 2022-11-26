@@ -72,7 +72,7 @@ namespace WindowsFormsApp2
                 membermanage.PrimaryKey = PrimaryKey;
                 DataRow currRow = membermanage.Rows.Find(SelectedRowIndex);
                 currRow.BeginEdit();
-                currRow["user_no"] = Convert.ToInt32(text.Text);
+                currRow["user_no"] = text.Text;
                 currRow["uname"] = textName.Text;
                 currRow["uphone"] = textPhone.Text;
                 currRow["lockernum"] = locknum.Text;
