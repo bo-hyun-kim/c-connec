@@ -48,18 +48,6 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (listView2.SelectedItems.Count <= 0)
-                MessageBox.Show("선택할 장비가 존재하지 않거나 장비를 선택하지 않았습니다.");
-            else
-                while (listView2.SelectedItems.Count > 0)
-                {
-                    foreach (ListViewItem item in listView2.SelectedItems)
-                    {
-                        ListViewItem.ListViewSubItemCollection subItem = item.SubItems;
-                        MessageBox.Show(subItem[1].Text + " 브랜드의 " + subItem[0].Text + " 판매완료");
-                    }
-                    listView2.Items.Remove(listView2.SelectedItems[0]);
-                }
 
         }
     }

@@ -29,9 +29,9 @@ namespace WindowsFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
+            this.textBirth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,43 +40,38 @@ namespace WindowsFormsApp2
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.text = new System.Windows.Forms.TextBox();
+            this.endDate = new System.Windows.Forms.TextBox();
+            this.startDate = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DBGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textName
             // 
-            this.textBox1.Location = new System.Drawing.Point(278, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 28);
-            this.textBox1.TabIndex = 1;
+            this.textName.Location = new System.Drawing.Point(278, 28);
+            this.textName.Margin = new System.Windows.Forms.Padding(4);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(126, 28);
+            this.textName.TabIndex = 1;
             // 
-            // textBox2
+            // textPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(549, 28);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 28);
-            this.textBox2.TabIndex = 2;
+            this.textPhone.Location = new System.Drawing.Point(549, 28);
+            this.textPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(126, 28);
+            this.textPhone.TabIndex = 2;
             // 
-            // textBox3
+            // textBirth
             // 
-            this.textBox3.Location = new System.Drawing.Point(809, 28);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 28);
-            this.textBox3.TabIndex = 3;
+            this.textBirth.Location = new System.Drawing.Point(809, 28);
+            this.textBirth.Margin = new System.Windows.Forms.Padding(4);
+            this.textBirth.Name = "textBirth";
+            this.textBirth.Size = new System.Drawing.Size(126, 28);
+            this.textBirth.TabIndex = 3;
             // 
             // label1
             // 
@@ -111,7 +106,7 @@ namespace WindowsFormsApp2
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(380, 164);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 35);
             this.button1.TabIndex = 7;
@@ -122,7 +117,7 @@ namespace WindowsFormsApp2
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(529, 164);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 35);
             this.button2.TabIndex = 8;
@@ -160,34 +155,34 @@ namespace WindowsFormsApp2
             this.label6.TabIndex = 20;
             this.label6.Text = "등록일";
             // 
-            // textBox6
+            // text
             // 
-            this.textBox6.Location = new System.Drawing.Point(809, 96);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(126, 28);
-            this.textBox6.TabIndex = 19;
+            this.text.Location = new System.Drawing.Point(809, 96);
+            this.text.Margin = new System.Windows.Forms.Padding(4);
+            this.text.Name = "text";
+            this.text.Size = new System.Drawing.Size(126, 28);
+            this.text.TabIndex = 19;
             // 
-            // textBox5
+            // endDate
             // 
-            this.textBox5.Location = new System.Drawing.Point(549, 96);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(126, 28);
-            this.textBox5.TabIndex = 18;
+            this.endDate.Location = new System.Drawing.Point(549, 96);
+            this.endDate.Margin = new System.Windows.Forms.Padding(4);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(126, 28);
+            this.endDate.TabIndex = 18;
             // 
-            // textBox4
+            // startDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(286, 96);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 28);
-            this.textBox4.TabIndex = 17;
+            this.startDate.Location = new System.Drawing.Point(280, 96);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(126, 28);
+            this.startDate.TabIndex = 17;
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(825, 164);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 35);
             this.button4.TabIndex = 23;
@@ -198,7 +193,7 @@ namespace WindowsFormsApp2
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(684, 164);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 35);
             this.button3.TabIndex = 9;
@@ -206,90 +201,53 @@ namespace WindowsFormsApp2
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // listView1
+            // DBGrid
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(57, 239);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(878, 258);
-            this.listView1.TabIndex = 24;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "이름";
-            this.columnHeader1.Width = 94;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "전화번호";
-            this.columnHeader2.Width = 122;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "생년월일";
-            this.columnHeader3.Width = 112;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "등록일";
-            this.columnHeader4.Width = 121;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "종료일";
-            this.columnHeader5.Width = 112;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "내용";
-            this.columnHeader6.Width = 107;
+            this.DBGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DBGrid.Location = new System.Drawing.Point(86, 241);
+            this.DBGrid.Name = "DBGrid";
+            this.DBGrid.RowHeadersWidth = 62;
+            this.DBGrid.RowTemplate.Height = 30;
+            this.DBGrid.Size = new System.Drawing.Size(850, 274);
+            this.DBGrid.TabIndex = 24;
+            this.DBGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 540);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.DBGrid);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.text);
+            this.Controls.Add(this.endDate);
+            this.Controls.Add(this.startDate);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.textBirth);
+            this.Controls.Add(this.textPhone);
+            this.Controls.Add(this.textName);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "member";
             this.Text = "회원관리";
+            this.Load += new System.EventHandler(this.member_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.TextBox textPhone;
+        private System.Windows.Forms.TextBox textBirth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -298,17 +256,11 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox text;
+        private System.Windows.Forms.TextBox endDate;
+        private System.Windows.Forms.TextBox startDate;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        public System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.DataGridView DBGrid;
     }
 }
