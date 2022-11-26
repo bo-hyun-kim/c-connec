@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "윈프_과제_홀수반_김한영", "WindowsFormsApp2\윈프_과제_홀수반_김한영.csproj", "{E8861ED8-57F1-42D3-BE49-24F54F99D9A4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookms_final", "..\..\..\Downloads\22_DBP_도서관리프로젝트_자료제공\도서관리프로젝트(bookms)_솔루션\bookms_final.csproj", "{CE3AA39B-2196-478D-8613-163D5BF93083}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "connection", "WindowsFormsApp2\connection.csproj", "{2297B67F-38D4-46E9-AC5A-616FDD272ACF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8861ED8-57F1-42D3-BE49-24F54F99D9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8861ED8-57F1-42D3-BE49-24F54F99D9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8861ED8-57F1-42D3-BE49-24F54F99D9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8861ED8-57F1-42D3-BE49-24F54F99D9A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE3AA39B-2196-478D-8613-163D5BF93083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE3AA39B-2196-478D-8613-163D5BF93083}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE3AA39B-2196-478D-8613-163D5BF93083}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE3AA39B-2196-478D-8613-163D5BF93083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2297B67F-38D4-46E9-AC5A-616FDD272ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2297B67F-38D4-46E9-AC5A-616FDD272ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2297B67F-38D4-46E9-AC5A-616FDD272ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2297B67F-38D4-46E9-AC5A-616FDD272ACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

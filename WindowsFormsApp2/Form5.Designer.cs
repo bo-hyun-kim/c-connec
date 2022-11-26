@@ -29,97 +29,193 @@ namespace WindowsFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSell = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.PrdGridView = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_prddate = new System.Windows.Forms.TextBox();
+            this.textBox_prdcnt = new System.Windows.Forms.TextBox();
+            this.textBox_prdcost = new System.Windows.Forms.TextBox();
+            this.textBox_prdname = new System.Windows.Forms.TextBox();
+            this.btnData = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PrdGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // btnSell
             // 
-            this.button3.Location = new System.Drawing.Point(730, 403);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(208, 73);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "물품 판매";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSell.Location = new System.Drawing.Point(538, 510);
+            this.btnSell.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(149, 37);
+            this.btnSell.TabIndex = 19;
+            this.btnSell.Text = "물품 판매";
+            this.btnSell.UseVisualStyleBackColor = true;
+            this.btnSell.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(376, 403);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(208, 73);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "물품 폐기";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDelete.Location = new System.Drawing.Point(307, 509);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(151, 39);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "물품 폐기";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(42, 403);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 73);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "물품 추가";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.Location = new System.Drawing.Point(73, 510);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(156, 38);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "물품 추가";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listView1
+            // PrdGridView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(42, 84);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(896, 258);
-            this.listView1.TabIndex = 20;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.PrdGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PrdGridView.Location = new System.Drawing.Point(37, 62);
+            this.PrdGridView.Name = "PrdGridView";
+            this.PrdGridView.RowHeadersWidth = 62;
+            this.PrdGridView.RowTemplate.Height = 30;
+            this.PrdGridView.Size = new System.Drawing.Size(1138, 289);
+            this.PrdGridView.TabIndex = 20;
+            this.PrdGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrdGridView_CellContentClick);
             // 
-            // columnHeader1
+            // label7
             // 
-            this.columnHeader1.Text = "품명";
-            this.columnHeader1.Width = 94;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(851, 404);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 18);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "처리날짜";
             // 
-            // columnHeader2
+            // label3
             // 
-            this.columnHeader2.Text = "수량";
-            this.columnHeader2.Width = 102;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(598, 403);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 18);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "물품가격";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 407);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 18);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "물품명";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(319, 403);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "물품수량";
+            // 
+            // textBox_prddate
+            // 
+            this.textBox_prddate.Location = new System.Drawing.Point(964, 397);
+            this.textBox_prddate.Name = "textBox_prddate";
+            this.textBox_prddate.Size = new System.Drawing.Size(94, 28);
+            this.textBox_prddate.TabIndex = 27;
+            // 
+            // textBox_prdcnt
+            // 
+            this.textBox_prdcnt.Location = new System.Drawing.Point(432, 400);
+            this.textBox_prdcnt.Name = "textBox_prdcnt";
+            this.textBox_prdcnt.Size = new System.Drawing.Size(94, 28);
+            this.textBox_prdcnt.TabIndex = 23;
+            // 
+            // textBox_prdcost
+            // 
+            this.textBox_prdcost.Location = new System.Drawing.Point(713, 397);
+            this.textBox_prdcost.Name = "textBox_prdcost";
+            this.textBox_prdcost.Size = new System.Drawing.Size(94, 28);
+            this.textBox_prdcost.TabIndex = 22;
+            // 
+            // textBox_prdname
+            // 
+            this.textBox_prdname.Location = new System.Drawing.Point(151, 400);
+            this.textBox_prdname.Name = "textBox_prdname";
+            this.textBox_prdname.Size = new System.Drawing.Size(94, 28);
+            this.textBox_prdname.TabIndex = 21;
+            // 
+            // btnData
+            // 
+            this.btnData.Location = new System.Drawing.Point(770, 509);
+            this.btnData.Margin = new System.Windows.Forms.Padding(4);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(149, 37);
+            this.btnData.TabIndex = 35;
+            this.btnData.Text = "내역 삭제";
+            this.btnData.UseVisualStyleBackColor = true;
+            this.btnData.Click += new System.EventHandler(this.btnData_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(935, 516);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(93, 28);
+            this.textBox1.TabIndex = 36;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 540);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(1192, 658);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnData);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_prddate);
+            this.Controls.Add(this.textBox_prdcnt);
+            this.Controls.Add(this.textBox_prdcost);
+            this.Controls.Add(this.textBox_prdname);
+            this.Controls.Add(this.PrdGridView);
+            this.Controls.Add(this.btnSell);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form5";
             this.Text = "물품관리";
             this.Load += new System.EventHandler(this.Form5_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PrdGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button btnSell;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView PrdGridView;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_prddate;
+        private System.Windows.Forms.TextBox textBox_prdcnt;
+        private System.Windows.Forms.TextBox textBox_prdcost;
+        private System.Windows.Forms.TextBox textBox_prdname;
+        private System.Windows.Forms.Button btnData;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

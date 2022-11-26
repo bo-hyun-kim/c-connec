@@ -19,6 +19,7 @@ namespace 윈프_과제_홀수반_김한영
         DataSet dS;// DataSet 객체입니다.
         OracleCommandBuilder myCommandBuilder; // 추가, 수정, 삭제시에 필요한 명령문을 자동으로 작성해주는 객체
         DataTable phoneTable;// DataTable 객체입니다.
+        DataTable prdtransaction;
         public OracleConnection Con { get { return con; } set { con = value; } }
         public OracleCommand DCom { get { return dcom; } set { dcom = value; } }
         public int SelectedRowIndex { get { return selectedRowIndex; } set { selectedRowIndex = value; } }
@@ -31,12 +32,58 @@ namespace 윈프_과제_홀수반_김한영
             set { myCommandBuilder = value; }
         }
         public DataTable HealthTable { get { return phoneTable; } set { phoneTable = value; } }
+        public DataTable Prdtransaction { get { return prdtransaction; } set { prdtransaction = value; } }
         public void DB_Open()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from membermanage";
+                string commandString = "select * from manager";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        public void DB_Open_Manager()
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = "select * from manager";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        public void DB_Open_Product()
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = "select * from prdtransaction ";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        public void DB_Open_Product_Access()
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = "select * from prdtransaction ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -51,7 +98,6 @@ namespace 윈프_과제_홀수반_김한영
             try
             {
                 string My_con = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
-
                 Con = new OracleConnection();
                 Con.ConnectionString = My_con;
                 DCom = new OracleCommand();
@@ -66,6 +112,7 @@ namespace 윈프_과제_홀수반_김한영
         public void DB_ObjCreate()
         {
             HealthTable = new DataTable();
+            Prdtransaction = new DataTable();
 
         }
     }
