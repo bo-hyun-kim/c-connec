@@ -6,8 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Oracle.DataAccess.Client;
-
+using 윈프_과제_홀수반_김한영;
 
 namespace WindowsFormsApp2
 
@@ -16,24 +15,24 @@ namespace WindowsFormsApp2
     public partial class member : Form
     {
         private string SelectedRowIndex;
+        DBClass dbc = new DBClass();
 
         public member()
         {
             InitializeComponent();
+            dbc.DB_Open();
+            dbc.DB_Access();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
-                string commandString = "select * from membermanage";
-                OracleDataAdapter DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                OracleCommandBuilder myCommandBuilder = new OracleCommandBuilder(DBAdapter);
-                DataSet DS = new DataSet();
-                DBAdapter.Fill(DS, "membermanage");
-                DataTable HealthTable = DS.Tables["membermanage"];
-                DataRow newRow = HealthTable.NewRow();
+                dbc.DS.Clear();
+                dbc.DBAdapter.Fill(dbc.DS, "membermanage");
+                DataTable mmTable = dbc.DS.Tables["membermanage"];
+                DataRow newRow = mmTable.NewRow();
                 newRow["user_no"] = Convert.ToInt32(text.Text);
                 newRow["uname"] = textName.Text;
                 newRow["uphone"] = textPhone.Text;
@@ -42,9 +41,8 @@ namespace WindowsFormsApp2
                 newRow["u_memperiod"] = endDate.Text;
                 newRow["ukind"] = kind.Text;
                 newRow["ucost"] = cost.Text;
-                HealthTable.Rows.Add(newRow);
-                DBAdapter.Update(DS, "membermanage");
-               
+                mmTable.Rows.Add(newRow);
+                dbc.DBAdapter.Update(dbc.DS, "membermanage");
             }
             catch (DataException DE)
             {
@@ -60,17 +58,12 @@ namespace WindowsFormsApp2
         {
             try
             {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
-                string commandString = "select * from membermanage";
-                OracleDataAdapter DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                OracleCommandBuilder myCommandBuilder = new OracleCommandBuilder(DBAdapter);
-                DataSet DS = new DataSet("membermanage");
-                DBAdapter.Fill(DS, "membermanage");
-                DataTable membermanage = DS.Tables["membermanage"];
+
+                dbc.Membermanage = dbc.DS.Tables["membermanage"];
                 DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = membermanage.Columns["user_no"];
-                membermanage.PrimaryKey = PrimaryKey;
-                DataRow currRow = membermanage.Rows.Find(SelectedRowIndex);
+                PrimaryKey[0] = dbc.Membermanage.Columns["user_no"];
+                dbc.Membermanage.PrimaryKey = PrimaryKey;
+                DataRow currRow = dbc.Membermanage.Rows.Find(SelectedRowIndex);
                 currRow.BeginEdit();
                 currRow["user_no"] = text.Text;
                 currRow["uname"] = textName.Text;
@@ -81,12 +74,15 @@ namespace WindowsFormsApp2
                 currRow["ukind"] = kind.Text;
                 currRow["ucost"] = cost.Text;
                 currRow.EndEdit();
-                DataSet UpdatedSet = DS.GetChanges(DataRowState.Modified);
+                DataSet UpdatedSet = dbc.DS.GetChanges(DataRowState.Modified);
                 if (UpdatedSet.HasErrors)
                 { MessageBox.Show("변경된 데이터에 문제가 있습니다."); }
                 else
-                { DBAdapter.Update(UpdatedSet, "membermanage"); DS.AcceptChanges(); }
-                DBGrid.DataSource = DS.Tables["membermanage"].DefaultView;
+                {
+                    dbc.DBAdapter.Update(UpdatedSet, "membermanage");
+                    dbc.DS.AcceptChanges();
+                }
+                DBGrid.DataSource = dbc.DS.Tables["membermanage"].DefaultView;
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
@@ -98,20 +94,15 @@ namespace WindowsFormsApp2
         {
             try
             {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
-                string commandString = "select * from membermanage";
-                OracleDataAdapter DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                OracleCommandBuilder myCommandBuilder = new OracleCommandBuilder(DBAdapter);
-                DataSet DS = new DataSet("membermanage");
-                DBAdapter.Fill(DS, "membermanage");
-                DataTable membermanage = DS.Tables["membermanage"];
+
+                dbc.Membermanage = dbc.DS.Tables["membermanage"];
                 DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = membermanage.Columns["user_no"];
-                membermanage.PrimaryKey = PrimaryKey;
-                DataRow currRow = membermanage.Rows.Find(SelectedRowIndex);
+                PrimaryKey[0] = dbc.Membermanage.Columns["user_no"];
+                dbc.Membermanage.PrimaryKey = PrimaryKey;
+                DataRow currRow = dbc.Membermanage.Rows.Find(SelectedRowIndex);
                 currRow.Delete();
-                DBAdapter.Update(DS.GetChanges(DataRowState.Deleted), "membermanage");
-                DBGrid.DataSource = DS.Tables["membermanage"].DefaultView;
+                dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "membermanage");
+                DBGrid.DataSource = dbc.DS.Tables["membermanage"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -130,24 +121,21 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
-    }
+
+        }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
-                string commandString = "select * from membermanage";
-                OracleDataAdapter DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                DataSet DS = new DataSet();
-                DBAdapter.Fill(DS, "membermanage");
-                DBGrid.DataSource = DS.Tables["membermanage"].DefaultView;
+                dbc.DS.Clear();
+                dbc.DBAdapter.Fill(dbc.DS, "membermanage");
+                DBGrid.DataSource = dbc.DS.Tables["membermanage"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -171,19 +159,14 @@ namespace WindowsFormsApp2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void DBGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
-                string commandString = "select * from membermanage";
-                OracleDataAdapter DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                DataSet DS = new DataSet();
-                DBAdapter.Fill(DS, "membermanage");
-                DataTable membermanage = DS.Tables["membermanage"];
+                DataTable membermanage = dbc.DS.Tables["membermanage"];
                 if (e.RowIndex < 0)
                 {
                     return;
@@ -209,6 +192,11 @@ namespace WindowsFormsApp2
             catch (Exception DE)
             { MessageBox.Show(DE.Message); }
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 
