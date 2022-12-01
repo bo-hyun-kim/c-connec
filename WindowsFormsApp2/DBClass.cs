@@ -127,12 +127,27 @@ namespace 윈프_과제_홀수반_김한영
             }
         }
 
-        public void DB_Open_Sales()
+        public void DB_Open_prdSales()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = " select prd_no, prd_name, prd_date, prd_endno, to_number(prd_cnt) * to_number(prd_cost) as sell from prdtransaction where prd_date between to_date('221111') and to_date('221112') ";
+                string commandString = " select prd_date 날짜, prd_name 거래품목, to_number(prd_cnt) * to_number(prd_cost) as 해당상품매출 from prdtransaction where prd_date between to_date('221101') and to_date('221130') ";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        public void DB_Open_uSales()
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = " select u_startdate 날짜, uname 회원이름, ucost 해당등록매출 from membermanage where u_startdate between to_date('220822') and to_date('220831') ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();

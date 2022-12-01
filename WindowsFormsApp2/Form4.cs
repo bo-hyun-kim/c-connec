@@ -24,7 +24,8 @@ namespace WindowsFormsApp2
         public Form4()
         {
             InitializeComponent();
-            dbc.DB_Open_Sales();
+            dbc.DB_Open_uSales();
+            dbc.DB_Open_prdSales();
 
         }
        
@@ -40,6 +41,8 @@ namespace WindowsFormsApp2
             {
                 dbc.DBAdapter.Fill(dbc.DS, "sellmanage");
                 dataGridView1.DataSource = dbc.DS.Tables["sellmanage"].DefaultView;
+                dbc.DBAdapter.Fill(dbc.DS, "sellmanage");
+                dataGridView2.DataSource = dbc.DS.Tables["sellmanage"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -57,6 +60,11 @@ namespace WindowsFormsApp2
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
