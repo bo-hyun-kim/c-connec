@@ -20,7 +20,6 @@ namespace 윈프_과제_홀수반_김한영
         OracleCommandBuilder myCommandBuilder; // 추가, 수정, 삭제시에 필요한 명령문을 자동으로 작성해주는 객체
         DataTable membermanage;// DataTable 객체입니다.
         DataTable prdtransaction;
-        DataTable reservation;
         public OracleConnection Con { get { return con; } set { con = value; } }
         public OracleCommand DCom { get { return dcom; } set { dcom = value; } }
         public int SelectedRowIndex { get { return selectedRowIndex; } set { selectedRowIndex = value; } }
@@ -34,7 +33,6 @@ namespace 윈프_과제_홀수반_김한영
         }
         public DataTable Membermanage { get { return membermanage; } set { membermanage = value; } }
         public DataTable Prdtransaction { get { return prdtransaction; } set { prdtransaction = value; } }
-        public DataTable Reservation { get { return reservation; } set { reservation = value; } }
         public void DB_Open()
         {
             try
@@ -96,12 +94,13 @@ namespace 윈프_과제_홀수반_김한영
             }
         }
 
-        public void DB_Open_Reservation()
+
+        public void DB_Open_Sales()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from prdtransaction ";
+                string commandString = "select * from sales ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -111,12 +110,12 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        public void DB_Open_Reservation_Access()
+        public void DB_Open_Sales_Access()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from prdtransaction ";
+                string commandString = "select * from sales ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -126,6 +125,8 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
+
+
         public void DB_Access()
         {
             try
