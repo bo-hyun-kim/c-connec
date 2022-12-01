@@ -132,7 +132,7 @@ namespace 윈프_과제_홀수반_김한영
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = " 쿼리문 ";
+                string commandString = " select prd_no, prd_name, prd_date, prd_endno, to_number(prd_cnt) * to_number(prd_cost) as sell from prdtransaction where prd_date between to_date('221111') and to_date('221112') ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -142,21 +142,7 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        public void DB_Open_Sales_Access()
-        {
-            try
-            {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "쿼리문";
-                DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
-                DS = new DataSet();
-            }
-            catch (DataException DE)
-            {
-                MessageBox.Show(DE.Message);
-            }
-        }
+
         public void DB_Access()
         {
             try

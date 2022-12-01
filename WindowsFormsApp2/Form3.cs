@@ -39,7 +39,7 @@ namespace WindowsFormsApp2
             dbc.DBAdapter.Fill(dbc.DS, "manager");
             DataTable ManagerTable = dbc.DS.Tables["manager"];
             DataRow currRow = ManagerTable.Rows[0];
-            textBox_ID.Text = currRow["user_id"].ToString();
+
 
 
             if (textBox_ID.Text == currRow["user_id"].ToString() && textBox_PW.Text == currRow["user_password"].ToString())

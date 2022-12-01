@@ -41,9 +41,10 @@ namespace WindowsFormsApp2
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(626, 72);
+            this.btnFind.Location = new System.Drawing.Point(711, 17);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(105, 27);
+            this.btnFind.Size = new System.Drawing.Size(131, 32);
             this.btnFind.TabIndex = 3;
             this.btnFind.Text = "매출 조회";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -52,63 +53,67 @@ namespace WindowsFormsApp2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(455, 76);
+            this.label1.Location = new System.Drawing.Point(499, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "검색날짜";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtFind1
             // 
-            this.txtFind1.Location = new System.Drawing.Point(524, 72);
-            this.txtFind1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFind1.Location = new System.Drawing.Point(592, 17);
+            this.txtFind1.Margin = new System.Windows.Forms.Padding(2);
             this.txtFind1.Name = "txtFind1";
-            this.txtFind1.Size = new System.Drawing.Size(81, 25);
+            this.txtFind1.Size = new System.Drawing.Size(100, 28);
             this.txtFind1.TabIndex = 5;
             this.txtFind1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(52, 59);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(320, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(400, 422);
             this.dataGridView1.TabIndex = 22;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(430, 184);
+            this.dataGridView2.Location = new System.Drawing.Point(538, 60);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(301, 217);
+            this.dataGridView2.Size = new System.Drawing.Size(376, 421);
             this.dataGridView2.TabIndex = 23;
             // 
             // btnPrev
             // 
-            this.btnPrev.Location = new System.Drawing.Point(626, 105);
+            this.btnPrev.Location = new System.Drawing.Point(856, 17);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(105, 23);
+            this.btnPrev.Size = new System.Drawing.Size(131, 28);
             this.btnPrev.TabIndex = 24;
             this.btnPrev.Text = "이전";
             this.btnPrev.UseVisualStyleBackColor = true;
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 540);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtFind1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFind);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form4";
             this.Text = "매출관리";
             this.Load += new System.EventHandler(this.Form4_Load);
