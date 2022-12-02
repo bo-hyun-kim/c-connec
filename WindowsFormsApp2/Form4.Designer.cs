@@ -62,7 +62,6 @@ namespace WindowsFormsApp2
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "검색날짜";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtFind1
             // 
@@ -120,7 +119,6 @@ namespace WindowsFormsApp2
             this.label4.Size = new System.Drawing.Size(157, 15);
             this.label4.TabIndex = 27;
             this.label4.Text = "0월 물품매출 : 0000원";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 

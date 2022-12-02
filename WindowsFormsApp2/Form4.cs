@@ -39,10 +39,13 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DBAdapter.Fill(dbc.DS, "sellmanage");
-                dataGridView1.DataSource = dbc.DS.Tables["sellmanage"].DefaultView;
-                dbc.DBAdapter.Fill(dbc.DS, "sellmanage");
-                dataGridView2.DataSource = dbc.DS.Tables["sellmanage"].DefaultView;
+                dbc.DB_Open_prdSales();
+                dbc.DBAdapter.Fill(dbc.DS, "prdsales");
+                dataGridView1.DataSource = dbc.DS.Tables["prdsales"].DefaultView;
+
+                dbc.DB_Open_uSales();
+                dbc.DBAdapter.Fill(dbc.DS, "usales");
+                dataGridView2.DataSource = dbc.DS.Tables["usales"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -53,20 +56,18 @@ namespace WindowsFormsApp2
                 MessageBox.Show(DE.Message);
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        public void prdslaes_counter()
         {
-
+            int i, sum = 0;
+            i = dataGridView1.RowCount;
+            sum = Convert.ToInt32(dbc.DS.Tables["prdsales"].Compute("Sum(prd_cost)", ""));
+            label4.Text = "물품 총 매출 :" + sum + "원";
         }
+   
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+        }   
 }

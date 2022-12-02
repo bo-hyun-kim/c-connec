@@ -21,6 +21,8 @@ namespace 윈프_과제_홀수반_김한영
         DataTable membermanage;// DataTable 객체입니다.
         DataTable prdtransaction;
         DataTable reservation;
+        DataTable prdsales;
+        DataTable usales;
         public OracleConnection Con { get { return con; } set { con = value; } }
         public OracleCommand DCom { get { return dcom; } set { dcom = value; } }
         public int SelectedRowIndex { get { return selectedRowIndex; } set { selectedRowIndex = value; } }
@@ -35,6 +37,9 @@ namespace 윈프_과제_홀수반_김한영
         public DataTable Membermanage { get { return membermanage; } set { membermanage = value; } }
         public DataTable Prdtransaction { get { return prdtransaction; } set { prdtransaction = value; } }
         public DataTable Reservation { get { return reservation; } set { reservation = value; } }
+        public DataTable PrdSales { get { return prdtransaction; } set { prdtransaction = value; } }
+        public DataTable USales { get { return membermanage; } set { membermanage = value; } }
+
         public void DB_Open()
         {
             try
