@@ -33,14 +33,14 @@ namespace WindowsFormsApp2
                 dbc.DBAdapter.Fill(dbc.DS, "membermanage");
                 DataTable mmTable = dbc.DS.Tables["membermanage"];
                 DataRow newRow = mmTable.NewRow();
-                newRow["user_no"] = Convert.ToInt32(text.Text);
-                newRow["uname"] = textName.Text;
-                newRow["uphone"] = textPhone.Text;
-                newRow["lockernum"] = locknum.Text;
+                newRow["user_no"] = Convert.ToInt32(1);
+                newRow["uname"] = username.Text;
+                newRow["uphone"] = userphone.Text;
+                newRow["lockernum"] = lockernum.Text;
                 newRow["u_startdate"] = startDate.Text;
-                newRow["u_memperiod"] = endDate.Text;
+                newRow["u_memperiod"] = regtype.Text;
                 newRow["ukind"] = kind.Text;
-                newRow["ucost"] = cost.Text;
+                newRow["ucost"] = regfee.Text;
                 mmTable.Rows.Add(newRow);
                 dbc.DBAdapter.Update(dbc.DS, "membermanage");
             }
@@ -65,14 +65,14 @@ namespace WindowsFormsApp2
                 dbc.Membermanage.PrimaryKey = PrimaryKey;
                 DataRow currRow = dbc.Membermanage.Rows.Find(SelectedRowIndex);
                 currRow.BeginEdit();
-                currRow["user_no"] = text.Text;
-                currRow["uname"] = textName.Text;
-                currRow["uphone"] = textPhone.Text;
-                currRow["lockernum"] = locknum.Text;
+               // currRow["user_no"] = text.Text;
+                currRow["uname"] = username.Text;
+                currRow["uphone"] = userphone.Text;
+                currRow["lockernum"] = lockernum.Text;
                 currRow["u_startdate"] = startDate.Text;
-                currRow["u_memperiod"] = endDate.Text;
+                currRow["u_memperiod"] = regtype.Text;
                 currRow["ukind"] = kind.Text;
-                currRow["ucost"] = cost.Text;
+                currRow["ucost"] = regfee.Text;
                 currRow.EndEdit();
                 DataSet UpdatedSet = dbc.DS.GetChanges(DataRowState.Modified);
                 if (UpdatedSet.HasErrors)
@@ -177,14 +177,14 @@ namespace WindowsFormsApp2
                     return;
                 }
                 DataRow currRow = membermanage.Rows[e.RowIndex];
-                text.Text = currRow["user_no"].ToString();
-                textName.Text = currRow["uname"].ToString();
-                textPhone.Text = currRow["uphone"].ToString();
-                locknum.Text = currRow["lockernum"].ToString();
+                //text.Text = currRow["user_no"].ToString();
+                username.Text = currRow["uname"].ToString();
+                userphone.Text = currRow["uphone"].ToString();
+                lockernum.Text = currRow["lockernum"].ToString();
                 startDate.Text = currRow["u_startdate"].ToString();
-                endDate.Text = currRow["u_memperiod"].ToString();
+                regtype.Text = currRow["u_memperiod"].ToString();
                 kind.Text = currRow["ukind"].ToString();
-                cost.Text = currRow["ucost"].ToString();
+                regfee.Text = currRow["ucost"].ToString();
                 SelectedRowIndex = currRow["user_no"].ToString();
             }
             catch (DataException DE)
@@ -196,6 +196,12 @@ namespace WindowsFormsApp2
         private void button5_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            Form8 f = new Form8();
+            DialogResult result = f.ShowDialog();
         }
     }
 }
