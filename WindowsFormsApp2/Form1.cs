@@ -52,6 +52,12 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            using (Font fnt = new Font(this.label1.Font.Name, 15))
+            {
+                this.label3.Font = fnt;
+                this.label2.Font = fnt;
+                this.label4.Font = fnt;
+            }
             label3.Text = " ";
             this.Show();
 
@@ -89,6 +95,7 @@ namespace WindowsFormsApp2
         {
             label3.Text = loginid;
         }
+
     }
     }
 

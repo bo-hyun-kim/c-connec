@@ -180,21 +180,6 @@ namespace 윈프_과제_홀수반_김한영
             }
         }
 
-        /*public void DB_Open_Product_Insert()
-        {
-            try
-            {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('7','바나나쉐이크','3','50000','22-11-10','3'); ";
-                OracleCommand OraCmd = new OracleCommand(commandString, connectionString);
-            }
-            catch (DataException DE)
-            {
-                MessageBox.Show(DE.Message);
-            }
-        }*/
-
-
         public void DB_Open_prdSales(string mon)
         {
             try

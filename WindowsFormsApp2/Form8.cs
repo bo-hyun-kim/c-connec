@@ -45,6 +45,9 @@ namespace 윈프_과제_홀수반_김한영
                 cmd.CommandText = $"INSERT INTO managerinfo(empnum,empname,empaddr,empemail) VALUES('{seq}','{empname}','{empaddr}','{empemail}') ";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Trainer();
+                dbc.DBAdapter.Fill(dbc.DS, "trainer");
+                dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -72,6 +75,9 @@ namespace 윈프_과제_홀수반_김한영
                 cmd.CommandText = $"update managerinfo set empname = '{empname}', empaddr= '{empaddr}', empemail= '{empemail}' where empnum = '{SelectedRowIndex}'";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Trainer();
+                dbc.DBAdapter.Fill(dbc.DS, "trainer");
+                dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -96,6 +102,10 @@ namespace 윈프_과제_홀수반_김한영
                 cmd.CommandText = $"delete from managerinfo where empnum = {SelectedRowIndex}";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Trainer();
+                dbc.DBAdapter.Fill(dbc.DS, "trainer");
+                dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
+
             }
             catch (DataException DE)
             {
@@ -115,7 +125,7 @@ namespace 윈프_과제_홀수반_김한영
                 textBox2.Text = "";
                 dbc.DB_Open_Trainer();
                 dbc.DBAdapter.Fill(dbc.DS, "trainer");
-                dataGridView1.DataSource = "";
+            
                 dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
             }
             catch (DataException DE)
@@ -131,14 +141,19 @@ namespace 윈프_과제_홀수반_김한영
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {
+            {   
                 SelectedRowIndex = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textBox2.Text = $"Selected {SelectedRowIndex}";
+                
+                managername.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                addr.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                email.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox2.Text = $"Index {SelectedRowIndex}";
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
             catch (Exception DE)
             { MessageBox.Show(DE.Message); }
         }
+
     }
 }

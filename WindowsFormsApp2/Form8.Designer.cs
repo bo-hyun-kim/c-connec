@@ -46,7 +46,7 @@
             // 비용
             // 
             this.비용.AutoSize = true;
-            this.비용.Location = new System.Drawing.Point(296, 90);
+            this.비용.Location = new System.Drawing.Point(264, 35);
             this.비용.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.비용.Name = "비용";
             this.비용.Size = new System.Drawing.Size(44, 18);
@@ -55,7 +55,7 @@
             // 
             // addr
             // 
-            this.addr.Location = new System.Drawing.Point(346, 82);
+            this.addr.Location = new System.Drawing.Point(316, 33);
             this.addr.Margin = new System.Windows.Forms.Padding(4);
             this.addr.Name = "addr";
             this.addr.Size = new System.Drawing.Size(125, 28);
@@ -64,7 +64,7 @@
             // 종류
             // 
             this.종류.AutoSize = true;
-            this.종류.Location = new System.Drawing.Point(76, 88);
+            this.종류.Location = new System.Drawing.Point(44, 33);
             this.종류.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.종류.Name = "종류";
             this.종류.Size = new System.Drawing.Size(62, 18);
@@ -73,7 +73,7 @@
             // 
             // managername
             // 
-            this.managername.Location = new System.Drawing.Point(143, 86);
+            this.managername.Location = new System.Drawing.Point(114, 33);
             this.managername.Margin = new System.Windows.Forms.Padding(4);
             this.managername.Name = "managername";
             this.managername.Size = new System.Drawing.Size(125, 28);
@@ -82,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(500, 90);
+            this.label1.Location = new System.Drawing.Point(468, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 18);
@@ -91,7 +91,7 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(567, 86);
+            this.email.Location = new System.Drawing.Point(535, 31);
             this.email.Margin = new System.Windows.Forms.Padding(4);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(125, 28);
@@ -100,18 +100,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(81, 280);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 157);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(701, 316);
             this.dataGridView1.TabIndex = 35;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(191, 210);
+            this.button1.Location = new System.Drawing.Point(47, 94);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 34);
@@ -122,7 +122,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(327, 210);
+            this.button2.Location = new System.Drawing.Point(183, 94);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 34);
@@ -133,7 +133,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(462, 210);
+            this.button3.Location = new System.Drawing.Point(318, 94);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 34);
@@ -144,7 +144,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(598, 210);
+            this.button4.Location = new System.Drawing.Point(454, 94);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(127, 34);
@@ -155,16 +155,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(79, 210);
+            this.textBox2.Location = new System.Drawing.Point(588, 99);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 28);
+            this.textBox2.Size = new System.Drawing.Size(162, 28);
             this.textBox2.TabIndex = 40;
             // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 625);
+            this.ClientSize = new System.Drawing.Size(775, 518);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -177,8 +177,10 @@
             this.Controls.Add(this.addr);
             this.Controls.Add(this.종류);
             this.Controls.Add(this.managername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "트레이너 관리";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

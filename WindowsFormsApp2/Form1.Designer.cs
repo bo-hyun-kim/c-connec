@@ -34,7 +34,6 @@ namespace WindowsFormsApp2
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
@@ -76,7 +75,7 @@ namespace WindowsFormsApp2
             this.button2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button2.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(437, 280);
+            this.button2.Location = new System.Drawing.Point(394, 280);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(234, 126);
@@ -93,7 +92,7 @@ namespace WindowsFormsApp2
             this.button3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button3.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.Gray;
-            this.button3.Location = new System.Drawing.Point(80, 530);
+            this.button3.Location = new System.Drawing.Point(80, 477);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(234, 126);
@@ -110,7 +109,7 @@ namespace WindowsFormsApp2
             this.button4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button4.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.Color.Gray;
-            this.button4.Location = new System.Drawing.Point(437, 530);
+            this.button4.Location = new System.Drawing.Point(394, 477);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(234, 126);
@@ -120,23 +119,11 @@ namespace WindowsFormsApp2
             this.button4.UseWaitCursor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("함초롬돋움 확장", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(920, 62);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 23);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "영업 일자 : ";
-            this.label14.UseWaitCursor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(71, 68);
+            this.label1.Location = new System.Drawing.Point(62, 123);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(494, 108);
@@ -154,12 +141,13 @@ namespace WindowsFormsApp2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1031, 68);
+            this.label2.Location = new System.Drawing.Point(832, 69);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.UseWaitCursor = true;
             // 
             // 부가기능ToolStripMenuItem
@@ -187,7 +175,7 @@ namespace WindowsFormsApp2
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1301, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1182, 33);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.UseWaitCursor = true;
@@ -218,7 +206,7 @@ namespace WindowsFormsApp2
             // pictureBox1
             // 
             this.pictureBox1.Image = global::윈프_과제_홀수반_김한영.Properties.Resources.ddddd;
-            this.pictureBox1.Location = new System.Drawing.Point(797, 318);
+            this.pictureBox1.Location = new System.Drawing.Point(744, 280);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(401, 408);
@@ -229,41 +217,45 @@ namespace WindowsFormsApp2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(720, 68);
+            this.label3.Location = new System.Drawing.Point(87, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 18);
             this.label3.TabIndex = 12;
             this.label3.Text = "label3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.UseWaitCursor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(556, 68);
+            this.label4.Location = new System.Drawing.Point(147, 69);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 18);
+            this.label4.Size = new System.Drawing.Size(122, 18);
             this.label4.TabIndex = 13;
-            this.label4.Text = "현재 로그인 계정 :";
+            this.label4.Text = "님 환영합니다";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.UseWaitCursor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 813);
+            this.ClientSize = new System.Drawing.Size(1182, 705);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_member);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SYU GYM";
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -281,7 +273,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;

@@ -13,6 +13,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Runtime.InteropServices.ComTypes;
 using 윈프_과제_홀수반_김한영;
 using System.Data.Common;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp2
 {
@@ -66,6 +67,9 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','0')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Product();
+                dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -94,6 +98,9 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','1')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Product();
+                dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -123,6 +130,9 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','2')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Product();
+                dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -146,6 +156,9 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"delete from prdtradeinfo where prdno = {SelectedRowIndex}";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                dbc.DB_Open_Product();
+                dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -164,7 +177,7 @@ namespace WindowsFormsApp2
             try
             {
                 SelectedRowIndex = PrdGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textBox1.Text = $"Selected {SelectedRowIndex}";
+                textBox1.Text = $"Index {SelectedRowIndex}";
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
@@ -175,7 +188,8 @@ namespace WindowsFormsApp2
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
-            {   
+            {
+                textBox1.Text = "";
                 dbc.DB_Open_Product();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
                 PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;

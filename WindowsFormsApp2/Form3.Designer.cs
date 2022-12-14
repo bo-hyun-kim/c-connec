@@ -40,7 +40,7 @@ namespace WindowsFormsApp2
             // 
             // button_close
             // 
-            this.button_close.Location = new System.Drawing.Point(112, 282);
+            this.button_close.Location = new System.Drawing.Point(76, 242);
             this.button_close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_close.Name = "button_close";
             this.button_close.Size = new System.Drawing.Size(223, 29);
@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 105);
+            this.label4.Location = new System.Drawing.Point(25, 92);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 18);
@@ -62,7 +62,7 @@ namespace WindowsFormsApp2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 50);
+            this.label3.Location = new System.Drawing.Point(37, 37);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 18);
@@ -71,7 +71,7 @@ namespace WindowsFormsApp2
             // 
             // button_log
             // 
-            this.button_log.Location = new System.Drawing.Point(112, 175);
+            this.button_log.Location = new System.Drawing.Point(76, 162);
             this.button_log.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_log.Name = "button_log";
             this.button_log.Size = new System.Drawing.Size(223, 32);
@@ -82,7 +82,7 @@ namespace WindowsFormsApp2
             // 
             // textBox_PW
             // 
-            this.textBox_PW.Location = new System.Drawing.Point(115, 105);
+            this.textBox_PW.Location = new System.Drawing.Point(79, 92);
             this.textBox_PW.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_PW.Name = "textBox_PW";
             this.textBox_PW.PasswordChar = '*';
@@ -91,7 +91,7 @@ namespace WindowsFormsApp2
             // 
             // textBox_ID
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(115, 50);
+            this.textBox_ID.Location = new System.Drawing.Point(79, 37);
             this.textBox_ID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_ID.Name = "textBox_ID";
             this.textBox_ID.Size = new System.Drawing.Size(220, 28);
@@ -100,7 +100,7 @@ namespace WindowsFormsApp2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(112, 230);
+            this.button1.Location = new System.Drawing.Point(76, 202);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(223, 32);
             this.button1.TabIndex = 29;
@@ -112,7 +112,7 @@ namespace WindowsFormsApp2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 369);
+            this.ClientSize = new System.Drawing.Size(356, 294);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.label4);
@@ -120,8 +120,10 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.button_log);
             this.Controls.Add(this.textBox_PW);
             this.Controls.Add(this.textBox_ID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "로그인";
             this.ResumeLayout(false);
             this.PerformLayout();

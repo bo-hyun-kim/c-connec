@@ -49,10 +49,10 @@ namespace WindowsFormsApp2
             // 
             // btnSell
             // 
-            this.btnSell.Location = new System.Drawing.Point(601, 507);
+            this.btnSell.Location = new System.Drawing.Point(454, 467);
             this.btnSell.Margin = new System.Windows.Forms.Padding(4);
             this.btnSell.Name = "btnSell";
-            this.btnSell.Size = new System.Drawing.Size(149, 37);
+            this.btnSell.Size = new System.Drawing.Size(114, 37);
             this.btnSell.TabIndex = 19;
             this.btnSell.Text = "물품 판매";
             this.btnSell.UseVisualStyleBackColor = true;
@@ -60,10 +60,10 @@ namespace WindowsFormsApp2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(432, 507);
+            this.btnDelete.Location = new System.Drawing.Point(318, 466);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(151, 39);
+            this.btnDelete.Size = new System.Drawing.Size(107, 39);
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "물품 폐기";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -71,10 +71,10 @@ namespace WindowsFormsApp2
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(243, 507);
+            this.btnAdd.Location = new System.Drawing.Point(184, 467);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(156, 38);
+            this.btnAdd.Size = new System.Drawing.Size(111, 38);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "물품 추가";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -87,14 +87,14 @@ namespace WindowsFormsApp2
             this.PrdGridView.Name = "PrdGridView";
             this.PrdGridView.RowHeadersWidth = 62;
             this.PrdGridView.RowTemplate.Height = 30;
-            this.PrdGridView.Size = new System.Drawing.Size(1138, 289);
+            this.PrdGridView.Size = new System.Drawing.Size(931, 289);
             this.PrdGridView.TabIndex = 20;
             this.PrdGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrdGridView_CellContentClick);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(851, 404);
+            this.label7.Location = new System.Drawing.Point(647, 400);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 18);
             this.label7.TabIndex = 34;
@@ -103,7 +103,7 @@ namespace WindowsFormsApp2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(598, 403);
+            this.label3.Location = new System.Drawing.Point(452, 403);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 30;
@@ -121,7 +121,7 @@ namespace WindowsFormsApp2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(319, 403);
+            this.label1.Location = new System.Drawing.Point(241, 403);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 28;
@@ -129,38 +129,38 @@ namespace WindowsFormsApp2
             // 
             // textBox_prddate
             // 
-            this.textBox_prddate.Location = new System.Drawing.Point(964, 397);
+            this.textBox_prddate.Location = new System.Drawing.Point(744, 397);
             this.textBox_prddate.Name = "textBox_prddate";
             this.textBox_prddate.Size = new System.Drawing.Size(94, 28);
             this.textBox_prddate.TabIndex = 27;
             // 
             // textBox_prdcnt
             // 
-            this.textBox_prdcnt.Location = new System.Drawing.Point(432, 400);
+            this.textBox_prdcnt.Location = new System.Drawing.Point(332, 397);
             this.textBox_prdcnt.Name = "textBox_prdcnt";
             this.textBox_prdcnt.Size = new System.Drawing.Size(94, 28);
             this.textBox_prdcnt.TabIndex = 23;
             // 
             // textBox_prdcost
             // 
-            this.textBox_prdcost.Location = new System.Drawing.Point(713, 397);
+            this.textBox_prdcost.Location = new System.Drawing.Point(538, 397);
             this.textBox_prdcost.Name = "textBox_prdcost";
             this.textBox_prdcost.Size = new System.Drawing.Size(94, 28);
             this.textBox_prdcost.TabIndex = 22;
             // 
             // textBox_prdname
             // 
-            this.textBox_prdname.Location = new System.Drawing.Point(151, 400);
+            this.textBox_prdname.Location = new System.Drawing.Point(129, 400);
             this.textBox_prdname.Name = "textBox_prdname";
             this.textBox_prdname.Size = new System.Drawing.Size(94, 28);
             this.textBox_prdname.TabIndex = 21;
             // 
             // btnData
             // 
-            this.btnData.Location = new System.Drawing.Point(769, 507);
+            this.btnData.Location = new System.Drawing.Point(591, 469);
             this.btnData.Margin = new System.Windows.Forms.Padding(4);
             this.btnData.Name = "btnData";
-            this.btnData.Size = new System.Drawing.Size(149, 37);
+            this.btnData.Size = new System.Drawing.Size(112, 37);
             this.btnData.TabIndex = 35;
             this.btnData.Text = "내역 삭제";
             this.btnData.UseVisualStyleBackColor = true;
@@ -168,17 +168,17 @@ namespace WindowsFormsApp2
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(935, 516);
+            this.textBox1.Location = new System.Drawing.Point(733, 474);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 28);
+            this.textBox1.Size = new System.Drawing.Size(152, 28);
             this.textBox1.TabIndex = 36;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(47, 507);
+            this.button1.Location = new System.Drawing.Point(53, 468);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 38);
+            this.button1.Size = new System.Drawing.Size(107, 38);
             this.button1.TabIndex = 37;
             this.button1.Text = "내역 조회";
             this.button1.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@ namespace WindowsFormsApp2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 658);
+            this.ClientSize = new System.Drawing.Size(991, 533);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnData);
@@ -204,8 +204,10 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.btnSell);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "물품관리";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PrdGridView)).EndInit();
