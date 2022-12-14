@@ -43,12 +43,13 @@ namespace WindowsFormsApp2
             this.textBox_prdname = new System.Windows.Forms.TextBox();
             this.btnData = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PrdGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSell
             // 
-            this.btnSell.Location = new System.Drawing.Point(538, 510);
+            this.btnSell.Location = new System.Drawing.Point(601, 507);
             this.btnSell.Margin = new System.Windows.Forms.Padding(4);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(149, 37);
@@ -59,7 +60,7 @@ namespace WindowsFormsApp2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(307, 509);
+            this.btnDelete.Location = new System.Drawing.Point(432, 507);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 39);
@@ -70,7 +71,7 @@ namespace WindowsFormsApp2
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(73, 510);
+            this.btnAdd.Location = new System.Drawing.Point(243, 507);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(156, 38);
@@ -111,7 +112,7 @@ namespace WindowsFormsApp2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 407);
+            this.label2.Location = new System.Drawing.Point(61, 404);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 18);
             this.label2.TabIndex = 29;
@@ -156,7 +157,7 @@ namespace WindowsFormsApp2
             // 
             // btnData
             // 
-            this.btnData.Location = new System.Drawing.Point(770, 509);
+            this.btnData.Location = new System.Drawing.Point(769, 507);
             this.btnData.Margin = new System.Windows.Forms.Padding(4);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(149, 37);
@@ -172,11 +173,23 @@ namespace WindowsFormsApp2
             this.textBox1.Size = new System.Drawing.Size(93, 28);
             this.textBox1.TabIndex = 36;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(47, 507);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 38);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "내역 조회";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1192, 658);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnData);
             this.Controls.Add(this.label7);
@@ -217,5 +230,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TextBox textBox_prdname;
         private System.Windows.Forms.Button btnData;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -24,8 +24,6 @@ namespace WindowsFormsApp2
         public Form4()
         {
             InitializeComponent();
-            dbc.DB_Open_uSales();
-            dbc.DB_Open_prdSales();
 
         }
        
@@ -39,13 +37,23 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DB_Open_prdSales();
+                
+                dbc.DB_Open_prdSales(txtFind1.Text);
                 dbc.DBAdapter.Fill(dbc.DS, "prdsales");
                 dataGridView1.DataSource = dbc.DS.Tables["prdsales"].DefaultView;
+                
+                int prdsum = Convert.ToInt32(dbc.DS.Tables["prdsales"].Compute("Sum(총액)", ""));
+                textBox1.Text = $"{prdsum}";
 
-                dbc.DB_Open_uSales();
-                dbc.DBAdapter.Fill(dbc.DS, "usales");
-                dataGridView2.DataSource = dbc.DS.Tables["usales"].DefaultView;
+                dbc.DB_Open_uSales(txtFind1.Text);
+                dbc.DBAdapter.Fill(dbc.DS, "usersales");
+                dataGridView2.DataSource = dbc.DS.Tables["usersales"].DefaultView;
+
+                int usersum = Convert.ToInt32(dbc.DS.Tables["usersales"].Compute("Sum(등록비)", ""));
+                textBox2.Text = $"{usersum}";
+
+                int wholesum = Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text);
+                textBox3.Text = $"{wholesum}";
             }
             catch (DataException DE)
             {
@@ -56,18 +64,12 @@ namespace WindowsFormsApp2
                 MessageBox.Show(DE.Message);
             }
         }
-        public void prdslaes_counter()
-        {
-            int i, sum = 0;
-            i = dataGridView1.RowCount;
-            sum = Convert.ToInt32(dbc.DS.Tables["prdsales"].Compute("Sum(prd_cost)", ""));
-            label4.Text = "물품 총 매출 :" + sum + "원";
-        }
-   
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-        }   
+
+    }   
 }

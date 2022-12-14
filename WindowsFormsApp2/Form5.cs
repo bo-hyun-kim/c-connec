@@ -17,23 +17,21 @@ namespace WindowsFormsApp2
 {
     public partial class Form5 : Form
     {
-        
+        private int SelectedRowIndex;
         DBClass dbc = new DBClass();
         Random rand = new Random();
         public Form5()
         {
             InitializeComponent();
-            dbc.DB_Open_Product();
-            dbc.DB_ObjCreate();
         }
 
         private void Form5_Load(object sender, EventArgs e)
         {
-   
             try
             {
-                dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
-                PrdGridView.DataSource = dbc.DS.Tables["prdtransaction"].DefaultView;
+                dbc.DB_Open_Product();
+                dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -56,16 +54,17 @@ namespace WindowsFormsApp2
                 dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
                 DataTable PrdTable = dbc.DS.Tables["prdtransaction"];
                 DataRow newRow = PrdTable.NewRow();
-                newRow["prd_name"] = textBox_prdname.Text;
-                newRow["prd_cnt"] = textBox_prdcnt.Text;
-                newRow["prd_cost"] = textBox_prdcost.Text;
-                newRow["prd_date"] = textBox_prddate.Text;
-                newRow["prd_no"] = rand.Next();
-                newRow["prd_endno"] = "0";
+                newRow["prdtype"] = "추가";
+                newRow["prdname"] = textBox_prdname.Text;
+                newRow["prdcnt"] = textBox_prdcnt.Text;
+                newRow["prdcost"] = textBox_prdcost.Text;
+                newRow["prddate"] = textBox_prddate.Text;
+                newRow["prdno"] = rand.Next();
+                newRow["prdendno"] = "0";
                 PrdTable.Rows.Add(newRow);
                 dbc.DBAdapter.Update(dbc.DS, "prdtransaction");
- 
-                
+
+
             }
             catch (DataException DE)
             {
@@ -84,12 +83,13 @@ namespace WindowsFormsApp2
                 dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
                 DataTable PrdTable = dbc.DS.Tables["prdtransaction"];
                 DataRow newRow = PrdTable.NewRow();
-                newRow["prd_name"] = textBox_prdname.Text;
-                newRow["prd_cnt"] = textBox_prdcnt.Text;
-                newRow["prd_cost"] = textBox_prdcost.Text;
-                newRow["prd_date"] = textBox_prddate.Text;
-                newRow["prd_no"] = rand.Next();
-                newRow["prd_endno"] = "1";
+                newRow["prdtype"] = "폐기";
+                newRow["prdname"] = textBox_prdname.Text;
+                newRow["prdcnt"] = textBox_prdcnt.Text;
+                newRow["prdcost"] = textBox_prdcost.Text;
+                newRow["prddate"] = textBox_prddate.Text;
+                newRow["prdno"] = rand.Next();
+                newRow["prdendno"] = "1";
                 PrdTable.Rows.Add(newRow);
                 dbc.DBAdapter.Update(dbc.DS, "prdtransaction");
 
@@ -112,12 +112,13 @@ namespace WindowsFormsApp2
                 dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
                 DataTable PrdTable = dbc.DS.Tables["prdtransaction"];
                 DataRow newRow = PrdTable.NewRow();
-                newRow["prd_name"] = textBox_prdname.Text;
-                newRow["prd_cnt"] = textBox_prdcnt.Text;
-                newRow["prd_cost"] = textBox_prdcost.Text;
-                newRow["prd_date"] = textBox_prddate.Text;
-                newRow["prd_no"] = rand.Next();
-                newRow["prd_endno"] = "2";
+                newRow["prdtype"] = "판매";
+                newRow["prdname"] = textBox_prdname.Text;
+                newRow["prdcnt"] = textBox_prdcnt.Text;
+                newRow["prdcost"] = textBox_prdcost.Text;
+                newRow["prddate"] = textBox_prddate.Text;
+                newRow["prdno"] = rand.Next();
+                newRow["prdendno"] = "2";
                 PrdTable.Rows.Add(newRow);
                 dbc.DBAdapter.Update(dbc.DS, "prdtransaction");
 
@@ -136,13 +137,14 @@ namespace WindowsFormsApp2
         {
             try
             {
+                dbc.DB_Open_Product();
                 dbc.DS.Clear();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
                 dbc.Prdtransaction = dbc.DS.Tables["prdtransaction"];
                 DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Prdtransaction.Columns["prd_no"];
+                PrimaryKey[0] = dbc.Prdtransaction.Columns["prdno"];
                 dbc.Prdtransaction.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Prdtransaction.Rows.Find(dbc.SelectedRowIndex);
+                DataRow currRow = dbc.Prdtransaction.Rows.Find(SelectedRowIndex);
                 currRow.Delete();
                 dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "prdtransaction");
                 PrdGridView.DataSource = dbc.DS.Tables["prdtransaction"].DefaultView;
@@ -164,8 +166,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                
-                dbc.DS.Clear();
+
                 dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
                 DataTable prdtransaction = dbc.DS.Tables["prdtransaction"];
                 if (e.RowIndex < 0)
@@ -178,13 +179,31 @@ namespace WindowsFormsApp2
                     return;
                 }
                 DataRow currRow = prdtransaction.Rows[e.RowIndex];
-                textBox1.Text = "Selected";
-                dbc.SelectedRowIndex = Convert.ToInt32(currRow["prd_no"]);
+                textBox1.Text = $"Selected {e.RowIndex}";
+                SelectedRowIndex = Convert.ToInt32(currRow["prdno"]);
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
             catch (Exception DE)
             { MessageBox.Show(DE.Message); }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {   
+                dbc.DB_Open_Product();
+                dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
     }
 }
