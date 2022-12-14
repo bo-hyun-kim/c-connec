@@ -87,13 +87,12 @@ namespace 윈프_과제_홀수반_김한영
             }
         }
 
-        //몰라 어디 부분이니~~~???1
-        public void DB_Open_Manager()
+        public void DB_Open_Admin()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from manager";
+                string commandString = "select * from admininfo";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();

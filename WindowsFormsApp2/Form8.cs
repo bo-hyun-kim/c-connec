@@ -15,7 +15,7 @@ namespace 윈프_과제_홀수반_김한영
 {
     public partial class Form8 : Form
     {
-        Random random = new Random();
+
         private String SelectedRowIndex;
         DBClass dbc = new DBClass();
         public Form8()
@@ -36,7 +36,6 @@ namespace 윈프_과제_홀수반_김한영
                 string empname = managername.Text;
                 string empaddr = addr.Text;
                 string empemail = email.Text;
-                int ranval = random.Next();
 
                 string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
                 OracleConnection conn = new OracleConnection(strConn);

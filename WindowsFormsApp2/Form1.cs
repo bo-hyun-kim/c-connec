@@ -14,13 +14,14 @@ namespace WindowsFormsApp2
 //TEST COMMIT123
     public partial class Form1 : Form
     {
-
+        public static string loginid;
         public Form1()
         {
             InitializeComponent();
         }
-        
-        public int openclosecount // 로그인 폼에서 openclosecount 값 전달받는곳, 즉 로그인폼에서 메인폼으로 값 전달
+    
+
+        public int openclosecount 
         {
             set; get;
         }
@@ -47,12 +48,11 @@ namespace WindowsFormsApp2
             Form4 f = new Form4();
             DialogResult result = f.ShowDialog();
             
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            label3.Text = " ";
             this.Show();
 
             Form3 form3 = new Form3();
@@ -72,16 +72,22 @@ namespace WindowsFormsApp2
 
         }
 
-     
-        private void 도움말ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            help help = new help();
-            help.Show();
-        }
-
         private void 나가기ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+
+            Form3 form3 = new Form3();
+            DialogResult result = form3.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            label3.Text = loginid;
         }
     }
     }

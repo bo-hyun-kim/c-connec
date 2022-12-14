@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
 
             try
             {
-                int seq = dbc.GetSequenceValue("MANAGER_SEQ");
+                int seq = dbc.GetSequenceValue("PRDTRADEINFO_SEQ");
                 string prdname = textBox_prdname.Text;
                 string prdcnt = textBox_prdcnt.Text;
                 string prdcost = textBox_prdcost.Text;
@@ -63,7 +63,7 @@ namespace WindowsFormsApp2
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{}','{prdname}','{prdcnt}','{prdcost}','{prddate}','0')";
+                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','0')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -80,6 +80,7 @@ namespace WindowsFormsApp2
         {
             try
             {
+                int seq = dbc.GetSequenceValue("PRDTRADEINFO_SEQ");
                 string prdname = textBox_prdname.Text;
                 string prdcnt = textBox_prdcnt.Text;
                 string prdcost = textBox_prdcost.Text;
@@ -90,7 +91,7 @@ namespace WindowsFormsApp2
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{}','{prdname}','{prdcnt}','{prdcost}','{prddate}','1')";
+                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','1')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -108,6 +109,7 @@ namespace WindowsFormsApp2
         {
             try
             {
+                int seq = dbc.GetSequenceValue("PRDTRADEINFO_SEQ");
                 string prdname = textBox_prdname.Text;
                 string prdcnt = textBox_prdcnt.Text;
                 string prdcost = textBox_prdcost.Text;
@@ -118,7 +120,7 @@ namespace WindowsFormsApp2
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{}','{prdname}','{prdcnt}','{prdcost}','{prddate}','2')";
+                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','2')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }

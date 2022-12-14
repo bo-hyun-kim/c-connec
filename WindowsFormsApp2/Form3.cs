@@ -25,7 +25,7 @@ namespace WindowsFormsApp2
         public Form3()
         {
             InitializeComponent();
-            dbc.DB_Open_Manager();
+            dbc.DB_Open_Admin();
         }
         
 
@@ -36,22 +36,20 @@ namespace WindowsFormsApp2
 
         private void button_log_Click(object sender, EventArgs e)
         {
-            dbc.DBAdapter.Fill(dbc.DS, "manager");
-            DataTable ManagerTable = dbc.DS.Tables["manager"];
-            DataRow currRow = ManagerTable.Rows[0];
+            dbc.DBAdapter.Fill(dbc.DS, "admin");
+            DataTable ManagerTable = dbc.DS.Tables["admin"];
 
-
-
-            if (textBox_ID.Text == currRow["user_id"].ToString() && textBox_PW.Text == currRow["user_password"].ToString())
+            for (int i = 0; i < ManagerTable.Rows.Count; i++)
             {
-                DialogResult = System.Windows.Forms.DialogResult.OK;
+                DataRow currRow = ManagerTable.Rows[i];
+                if (textBox_ID.Text == currRow["adminid"].ToString() && textBox_PW.Text == currRow["adminpasswd"].ToString())
+                {
+                    Form1.loginid = currRow["adminid"].ToString();
+                    DialogResult = System.Windows.Forms.DialogResult.OK;
+                }
             }
-            else
-            {
-                MessageBox.Show("암호가 일치하지 않습니다", "확인", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            
             }
-        }
         
 
         private void button_close_Click(object sender, EventArgs e)
@@ -62,6 +60,13 @@ namespace WindowsFormsApp2
         private void textBox_ID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Form9 f = new Form9();
+            DialogResult result = f.ShowDialog();
         }
     }
 }

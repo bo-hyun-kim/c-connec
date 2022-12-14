@@ -43,9 +43,11 @@ namespace WindowsFormsApp2
             this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.부가기능ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.도움말ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.나가기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,10 +59,10 @@ namespace WindowsFormsApp2
             this.button_member.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button_member.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_member.ForeColor = System.Drawing.Color.Gray;
-            this.button_member.Location = new System.Drawing.Point(56, 187);
-            this.button_member.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.button_member.Location = new System.Drawing.Point(80, 280);
+            this.button_member.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button_member.Name = "button_member";
-            this.button_member.Size = new System.Drawing.Size(164, 84);
+            this.button_member.Size = new System.Drawing.Size(234, 126);
             this.button_member.TabIndex = 1;
             this.button_member.Text = "회원 등록";
             this.button_member.UseVisualStyleBackColor = false;
@@ -74,10 +76,10 @@ namespace WindowsFormsApp2
             this.button2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button2.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(306, 187);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.button2.Location = new System.Drawing.Point(437, 280);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 84);
+            this.button2.Size = new System.Drawing.Size(234, 126);
             this.button2.TabIndex = 3;
             this.button2.Text = "물품 관리";
             this.button2.UseVisualStyleBackColor = false;
@@ -91,10 +93,10 @@ namespace WindowsFormsApp2
             this.button3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button3.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.Gray;
-            this.button3.Location = new System.Drawing.Point(56, 353);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.button3.Location = new System.Drawing.Point(80, 530);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 84);
+            this.button3.Size = new System.Drawing.Size(234, 126);
             this.button3.TabIndex = 4;
             this.button3.Text = "매출 관리";
             this.button3.UseVisualStyleBackColor = false;
@@ -108,10 +110,10 @@ namespace WindowsFormsApp2
             this.button4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button4.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.Color.Gray;
-            this.button4.Location = new System.Drawing.Point(306, 353);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.button4.Location = new System.Drawing.Point(437, 530);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 84);
+            this.button4.Size = new System.Drawing.Size(234, 126);
             this.button4.TabIndex = 5;
             this.button4.Text = "통합 조회";
             this.button4.UseVisualStyleBackColor = false;
@@ -122,9 +124,10 @@ namespace WindowsFormsApp2
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("함초롬돋움 확장", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(644, 41);
+            this.label14.Location = new System.Drawing.Point(920, 62);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 16);
+            this.label14.Size = new System.Drawing.Size(82, 23);
             this.label14.TabIndex = 7;
             this.label14.Text = "영업 일자 : ";
             this.label14.UseWaitCursor = true;
@@ -133,12 +136,14 @@ namespace WindowsFormsApp2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(50, 45);
+            this.label1.Location = new System.Drawing.Point(71, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 73);
+            this.label1.Size = new System.Drawing.Size(494, 108);
             this.label1.TabIndex = 9;
             this.label1.Text = "SYU GYM";
             this.label1.UseWaitCursor = true;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 
@@ -149,9 +154,10 @@ namespace WindowsFormsApp2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(722, 45);
+            this.label2.Location = new System.Drawing.Point(1031, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             this.label2.UseWaitCursor = true;
@@ -174,13 +180,14 @@ namespace WindowsFormsApp2
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.부가기능ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(876, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1301, 33);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.UseWaitCursor = true;
@@ -188,41 +195,63 @@ namespace WindowsFormsApp2
             // 부가기능ToolStripMenuItem1
             // 
             this.부가기능ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.도움말ToolStripMenuItem1,
-            this.나가기ToolStripMenuItem});
+            this.나가기ToolStripMenuItem,
+            this.로그아웃ToolStripMenuItem});
             this.부가기능ToolStripMenuItem1.Name = "부가기능ToolStripMenuItem1";
-            this.부가기능ToolStripMenuItem1.Size = new System.Drawing.Size(67, 22);
+            this.부가기능ToolStripMenuItem1.Size = new System.Drawing.Size(100, 29);
             this.부가기능ToolStripMenuItem1.Text = "부가기능";
-            // 
-            // 도움말ToolStripMenuItem1
-            // 
-            this.도움말ToolStripMenuItem1.Name = "도움말ToolStripMenuItem1";
-            this.도움말ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
-            this.도움말ToolStripMenuItem1.Text = "도움말";
-            this.도움말ToolStripMenuItem1.Click += new System.EventHandler(this.도움말ToolStripMenuItem1_Click);
             // 
             // 나가기ToolStripMenuItem
             // 
             this.나가기ToolStripMenuItem.Name = "나가기ToolStripMenuItem";
-            this.나가기ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.나가기ToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
             this.나가기ToolStripMenuItem.Text = "나가기";
             this.나가기ToolStripMenuItem.Click += new System.EventHandler(this.나가기ToolStripMenuItem_Click_1);
+            // 
+            // 로그아웃ToolStripMenuItem
+            // 
+            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(186, 34);
+            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::윈프_과제_홀수반_김한영.Properties.Resources.ddddd;
-            this.pictureBox1.Location = new System.Drawing.Point(558, 212);
+            this.pictureBox1.Location = new System.Drawing.Point(797, 318);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(281, 272);
+            this.pictureBox1.Size = new System.Drawing.Size(401, 408);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(720, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 18);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "label3";
+            this.label3.UseWaitCursor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(556, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 18);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "현재 로그인 계정 :";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 548);
+            this.ClientSize = new System.Drawing.Size(1301, 813);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -233,6 +262,7 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.button_member);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "SYU GYM";
             this.UseWaitCursor = true;
@@ -260,9 +290,11 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 부가기능ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 나가기ToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
