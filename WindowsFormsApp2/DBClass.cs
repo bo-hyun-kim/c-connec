@@ -21,8 +21,7 @@ namespace 윈프_과제_홀수반_김한영
         DataTable reginfo;// DataTable 객체입니다.
         DataTable prdtransaction;
         DataTable reservation;
-        DataTable prdsales;
-        DataTable usales;
+
         public OracleConnection Con { get { return con; } set { con = value; } }
         public OracleCommand DCom { get { return dcom; } set { dcom = value; } }
         public int SelectedRowIndex { get { return selectedRowIndex; } set { selectedRowIndex = value; } }
@@ -109,7 +108,7 @@ namespace 윈프_과제_홀수반_김한영
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from prdtransaction ";
+                string commandString = "select p.prdno as 일련번호,p.prdname as 처리물품명, p.prdcnt as 처리물품수량, p.prdcost as 처리물품가격, p.prddate as 처리날짜, t.prdendname as 처리형태명 from prdtradeinfo p, prdendtype t where p.prdendno=t.prdendno";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -119,43 +118,12 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        public void DB_Open_Product_Access()
+        public void DB_Open_Trainer()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from prdtransaction ";
-                DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
-                DS = new DataSet();
-            }
-            catch (DataException DE)
-            {
-                MessageBox.Show(DE.Message);
-            }
-        }
-
-        public void DB_Open_Reservation()
-        {
-            try
-            {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from prdtransaction ";
-                DBAdapter = new OracleDataAdapter(commandString, connectionString);
-                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
-                DS = new DataSet();
-            }
-            catch (DataException DE)
-            {
-                MessageBox.Show(DE.Message);
-            }
-        }
-        public void DB_Open_Reservation_Access()
-        {
-            try
-            {
-                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select * from prdtransaction ";
+                string commandString = "select * from managerinfo";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -166,12 +134,27 @@ namespace 윈프_과제_홀수반_김한영
             }
         }
 
-        public void DB_Open_prdSales()
+        /*public void DB_Open_Product_Insert()
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = " select prd_date 날짜, prd_name 거래품목, to_number(prd_cnt) * to_number(prd_cost) as 해당상품매출 from prdtransaction where prd_date between to_date('221101') and to_date('221130') ";
+                string commandString = "INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('7','바나나쉐이크','3','50000','22-11-10','3'); ";
+                OracleCommand OraCmd = new OracleCommand(commandString, connectionString);
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }*/
+
+
+        public void DB_Open_prdSales(string mon)
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = $"select prdname as 상품명, prddate as 거래날짜, to_number(prdcnt) * to_number(prdcost) as 총액 from prdtradeinfo where prddate between to_date('{mon}+01') and to_date('{mon}+30')";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -181,12 +164,12 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        public void DB_Open_uSales()
+        public void DB_Open_uSales(string mon)
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = " select u_startdate 날짜, uname 회원이름, ucost 해당등록매출 from membermanage where u_startdate between to_date('220822') and to_date('220831') ";
+                string commandString = $"select username as 회원이름, regdate as 등록일자, regtype as 등록종류, to_number(regfee) as 등록비 from userinfo where  regdate between to_date('{mon}+01') and to_date('{mon}+30') ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -213,6 +196,26 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
+
+        public int GetSequenceValue(string seq)
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
+                //string commandString = "select * from Phone";
+                OracleDataAdapter DBAdapter = new OracleDataAdapter("select " + seq + ".nextval as n from dual", connectionString);
+                OracleCommandBuilder MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DataSet DS = new DataSet();
+                DBAdapter.Fill(DS, "seq");
+                return int.Parse(DS.Tables["seq"].Rows[0]["n"].ToString());
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            return -1;
+        }
+
         public void DB_ObjCreate()
         {
             Reginfo = new DataTable();

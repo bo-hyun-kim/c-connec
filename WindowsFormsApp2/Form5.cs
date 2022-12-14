@@ -12,14 +12,15 @@ using Oracle.DataAccess.Client;
 using static System.Net.Mime.MediaTypeNames;
 using System.Runtime.InteropServices.ComTypes;
 using 윈프_과제_홀수반_김한영;
+using System.Data.Common;
 
 namespace WindowsFormsApp2
 {
     public partial class Form5 : Form
     {
-        private int SelectedRowIndex;
+        private String SelectedRowIndex;
         DBClass dbc = new DBClass();
-        Random rand = new Random();
+        private OracleConnection odpConn = new OracleConnection();
         public Form5()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace WindowsFormsApp2
             {
                 dbc.DB_Open_Product();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
+                PrdGridView.DataSource = "";
                 PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
             }
             catch (DataException DE)
@@ -47,24 +49,23 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
-                DataTable PrdTable = dbc.DS.Tables["prdtransaction"];
-                DataRow newRow = PrdTable.NewRow();
-                newRow["prdtype"] = "추가";
-                newRow["prdname"] = textBox_prdname.Text;
-                newRow["prdcnt"] = textBox_prdcnt.Text;
-                newRow["prdcost"] = textBox_prdcost.Text;
-                newRow["prddate"] = textBox_prddate.Text;
-                newRow["prdno"] = rand.Next();
-                newRow["prdendno"] = "0";
-                PrdTable.Rows.Add(newRow);
-                dbc.DBAdapter.Update(dbc.DS, "prdtransaction");
+                int seq = dbc.GetSequenceValue("MANAGER_SEQ");
+                string prdname = textBox_prdname.Text;
+                string prdcnt = textBox_prdcnt.Text;
+                string prdcost = textBox_prdcost.Text;
+                string prddate = textBox_prddate.Text;
+                string strConn= "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
 
-
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{}','{prdname}','{prdcnt}','{prdcost}','{prddate}','0')";
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -79,20 +80,19 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
-                DataTable PrdTable = dbc.DS.Tables["prdtransaction"];
-                DataRow newRow = PrdTable.NewRow();
-                newRow["prdtype"] = "폐기";
-                newRow["prdname"] = textBox_prdname.Text;
-                newRow["prdcnt"] = textBox_prdcnt.Text;
-                newRow["prdcost"] = textBox_prdcost.Text;
-                newRow["prddate"] = textBox_prddate.Text;
-                newRow["prdno"] = rand.Next();
-                newRow["prdendno"] = "1";
-                PrdTable.Rows.Add(newRow);
-                dbc.DBAdapter.Update(dbc.DS, "prdtransaction");
+                string prdname = textBox_prdname.Text;
+                string prdcnt = textBox_prdcnt.Text;
+                string prdcost = textBox_prdcost.Text;
+                string prddate = textBox_prddate.Text;
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
 
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{}','{prdname}','{prdcnt}','{prdcost}','{prddate}','1')";
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -108,20 +108,19 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
-                DataTable PrdTable = dbc.DS.Tables["prdtransaction"];
-                DataRow newRow = PrdTable.NewRow();
-                newRow["prdtype"] = "판매";
-                newRow["prdname"] = textBox_prdname.Text;
-                newRow["prdcnt"] = textBox_prdcnt.Text;
-                newRow["prdcost"] = textBox_prdcost.Text;
-                newRow["prddate"] = textBox_prddate.Text;
-                newRow["prdno"] = rand.Next();
-                newRow["prdendno"] = "2";
-                PrdTable.Rows.Add(newRow);
-                dbc.DBAdapter.Update(dbc.DS, "prdtransaction");
+                string prdname = textBox_prdname.Text;
+                string prdcnt = textBox_prdcnt.Text;
+                string prdcost = textBox_prdcost.Text;
+                string prddate = textBox_prddate.Text;
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
 
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{}','{prdname}','{prdcnt}','{prdcost}','{prddate}','2')";
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -136,19 +135,15 @@ namespace WindowsFormsApp2
         private void btnData_Click(object sender, EventArgs e)
         {
             try
-            {
-                dbc.DB_Open_Product();
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
-                dbc.Prdtransaction = dbc.DS.Tables["prdtransaction"];
-                DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Prdtransaction.Columns["prdno"];
-                dbc.Prdtransaction.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Prdtransaction.Rows.Find(SelectedRowIndex);
-                currRow.Delete();
-                dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "prdtransaction");
-                PrdGridView.DataSource = dbc.DS.Tables["prdtransaction"].DefaultView;
-                textBox1.Text = "";
+            {   
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"delete from prdtradeinfo where prdno = {SelectedRowIndex}";
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -166,21 +161,8 @@ namespace WindowsFormsApp2
         {
             try
             {
-
-                dbc.DBAdapter.Fill(dbc.DS, "prdtransaction");
-                DataTable prdtransaction = dbc.DS.Tables["prdtransaction"];
-                if (e.RowIndex < 0)
-                {
-                    return;
-                }
-                else if (e.RowIndex > prdtransaction.Rows.Count - 1)
-                {
-                    MessageBox.Show("해당하는 데이터가 존재하지 않습니다.");
-                    return;
-                }
-                DataRow currRow = prdtransaction.Rows[e.RowIndex];
-                textBox1.Text = $"Selected {e.RowIndex}";
-                SelectedRowIndex = Convert.ToInt32(currRow["prdno"]);
+                SelectedRowIndex = PrdGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBox1.Text = $"Selected {SelectedRowIndex}";
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
@@ -205,6 +187,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show(DE.Message);
             }
         }
+
     }
 }
 

@@ -170,7 +170,7 @@ namespace WindowsFormsApp2
             // 
             this.textBox1.Location = new System.Drawing.Point(935, 516);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 28);
+            this.textBox1.Size = new System.Drawing.Size(170, 28);
             this.textBox1.TabIndex = 36;
             // 
             // button1

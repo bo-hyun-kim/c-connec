@@ -1,17 +1,22 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace 윈프_과제_홀수반_김한영
 {
     public partial class Form8 : Form
     {
+        Random random = new Random();
+        private String SelectedRowIndex;
         DBClass dbc = new DBClass();
         public Form8()
         {
@@ -19,10 +24,28 @@ namespace 윈프_과제_홀수반_김한영
         }
         private void Form5_Load(object sender, EventArgs e)
         {
-            
+
+
+        }
+        //추가
+        private void button1_Click(object sender, EventArgs e)
+        {
             try
             {
-                dbc.DB_Open_managerInsert();
+                int seq = dbc.GetSequenceValue("MANAGER_SEQ");
+                string empname = managername.Text;
+                string empaddr = addr.Text;
+                string empemail = email.Text;
+                int ranval = random.Next();
+
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"INSERT INTO managerinfo(empnum,empname,empaddr,empemail) VALUES('{seq}','{empname}','{empaddr}','{empemail}') ";
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -33,32 +56,47 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //수정
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {   
 
+                string empname = managername.Text;
+                string empaddr = addr.Text;
+                string empemail = email.Text;
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"update managerinfo set empname = '{empname}', empaddr= '{empaddr}', empemail= '{empemail}' where empnum = '{SelectedRowIndex}'";
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
-
+        //삭제
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                dbc.DS.Clear();
-                dbc.DB_Open_manager();
-                dbc.DBAdapter.Fill(dbc.DS, "managerinfo");
-                dbc.Manager = dbc.DS.Tables["managerinfo"];
-                DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Manager.Columns["prd_no"];
-                dbc.Manager.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Manager.Rows.Find(dbc.SelectedRowIndex);
-                currRow.Delete();
-                dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "managerinfo");
-                dataGridView1.DataSource = dbc.DS.Tables["managerinfo"].DefaultView;
+                textBox2.Text = "";
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"delete from managerinfo where empnum = {SelectedRowIndex}";
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -69,16 +107,17 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-
+        //조회
         private void button4_Click(object sender, EventArgs e)
         {
-            
 
             try
             {
-                dbc.DB_Open_manager();
-                dbc.DBAdapter.Fill(dbc.DS, "managerinfo");
-                dataGridView1.DataSource = dbc.DS.Tables["managerinfo"].DefaultView;
+                textBox2.Text = "";
+                dbc.DB_Open_Trainer();
+                dbc.DBAdapter.Fill(dbc.DS, "trainer");
+                dataGridView1.DataSource = "";
+                dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -90,25 +129,12 @@ namespace 윈프_과제_홀수반_김한영
             }
         }
 
-        private void PrdGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "managerinfo");
-                DataTable manager = dbc.DS.Tables["managerinfo"];
-                if (e.RowIndex < 0)
-                {
-                    return;
-                }
-                else if (e.RowIndex > manager.Rows.Count - 1)
-                {
-                    MessageBox.Show("해당하는 데이터가 존재하지 않습니다.");
-                    return;
-                }
-                DataRow currRow = manager.Rows[e.RowIndex];
-                dbc.SelectedRowIndex = Convert.ToInt32(currRow["empnum"]);
+                SelectedRowIndex = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBox2.Text = $"Selected {SelectedRowIndex}";
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
