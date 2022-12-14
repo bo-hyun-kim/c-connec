@@ -165,12 +165,13 @@ namespace WindowsFormsApp2
             // 
             this.DBGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DBGrid.Location = new System.Drawing.Point(33, 175);
-            this.DBGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DBGrid.Margin = new System.Windows.Forms.Padding(2);
             this.DBGrid.Name = "DBGrid";
             this.DBGrid.RowHeadersWidth = 62;
             this.DBGrid.RowTemplate.Height = 30;
             this.DBGrid.Size = new System.Drawing.Size(773, 221);
             this.DBGrid.TabIndex = 24;
+            this.DBGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DBGrid_CellClick);
             this.DBGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DBGrid_CellContentClick);
             // 
             // 종류

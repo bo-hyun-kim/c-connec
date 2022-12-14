@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
                 conn.Open();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = $"INSERT INTO userinfo (usernum, username, userphone, lockernum, empnum, expiredate, regtype, regfee, ptdate, ptnum, regdate ) VALUES('{usernum}','{uname}','{uphone}','{lockernum}','{emnum}' ,TO_DATE('{edate}'), '{rtype}', '{rfee}', TO_DATE('{pdate}'), '{pnum}', TO_DATE('{rdate}')) ";
+                cmd.CommandText = $"INSERT INTO userinfo (usernum, username, userphone, lockernum, empnum, expiredate, regtype, regfee, ptdate, ptnum, regdate ) VALUES('{usernum}','{uname}','{uphone}','{lockernum}','{emnum}' ,TO_DATE('{edate}', 'YYYY-MM-DD'), '{rtype}', '{rfee}', TO_DATE('{pdate}'), '{pnum}', TO_DATE('{rdate}')) ";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("추가 되었습니다!");
                 conn.Close();
@@ -66,7 +66,37 @@ namespace WindowsFormsApp2
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+                string uname = username.Text;
+                string uphone = userphone.Text;
+                string emnum = empnum.Text;
+                string edate = enddate.Text;
+                string rtype = regtype.Text;
+                string rfee = regfee.Text;
+                string pdate = ptdate.Text;
+                string pnum = ptnum.Text;
+                string rdate = regdate.Text;
+
+
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"update userinfo set username = '{uname}', userphone = '{uphone}', empnum = '{emnum}',expiredate = '{edate}', regtype = '{rtype}',regfee = '{rfee}',ptdate = '{pdate}',ptnum = '{pnum}', regdate = '{rdate}'";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("수정 되었습니다!");
+                conn.Close();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -156,39 +186,7 @@ namespace WindowsFormsApp2
 
         private void DBGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-                DataTable userinfo = dbc.DS.Tables["userinfo"];
-                if (e.RowIndex < 0)
-                {
-                    return;
- }
-                else if (e.RowIndex > userinfo.Rows.Count - 1)
-                {
-                    MessageBox.Show("해당하는 데이터가 존재하지 않 습니다.");
-                 return;
-                }
-                DataRow currRow = userinfo.Rows[e.RowIndex];
-                username.Text = currRow["회원이름"].ToString();
-                userphone.Text = currRow["전화번호"].ToString();
-                enddate.Text = currRow["만기일자"].ToString();
-                regtype.Text = currRow["등록종류"].ToString();
-                regfee.Text = currRow["등록비"].ToString();
-                ptdate.Text = currRow["PT예약일자"].ToString();
-                ptnum.Text = currRow["PT횟수"].ToString();
-                regdate.Text = currRow["등록일자"].ToString();
-                dbc.SelectedRowIndex = Convert.ToInt32(currRow["회원번호"]);
-            }
-            catch (DataException DE)
-            {
-                MessageBox.Show(DE.Message);
-            }
-            catch (Exception DE)
-            {
-                MessageBox.Show(DE.Message);
-            }
+  
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -218,6 +216,22 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show(DE.Message);
             }
+        }
+
+        private void DBGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //enddate.Text
+            string t  = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            enddate.Text = string.Format("{0:yyyy-mm-dd}", t);
+            regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
+            regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+            ptdate.Text = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+            ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
+            regdate.Text = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
     }
 }
