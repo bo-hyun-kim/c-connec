@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using 윈프_과제_홀수반_김한영;
+using Oracle.DataAccess.Client;
 
 namespace WindowsFormsApp2
 
@@ -14,8 +15,11 @@ namespace WindowsFormsApp2
 
     public partial class member : Form
     {
-        private string SelectedRowIndex;
+        private int SelectedRowIndex;
+        private string RowIndex;
+
         DBClass dbc = new DBClass();
+
 
         public member()
         {
@@ -27,20 +31,28 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DB_Open_insert(regdate.Text, regtype.Text, regfee.Text, username.Text, userphone.Text, empnum.Text);
-                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
-                DataTable mmTable = dbc.DS.Tables["reginfo"];
-                DataRow newRow = mmTable.NewRow();
-                //newRow["regnum"] = "seq_usernum.nextval";
-                newRow["regdate"] = regdate.Text;
-                newRow["regtype"] = regtype.Text;
-                newRow["regfee"] =  regfee.Text;
-                //newRow["usernum"] = 2;
-                newRow["username"] = username.Text;
-                newRow["userphone"] = userphone.Text;
-                newRow["empnum"] = empnum.Text;
-                mmTable.Rows.Add(newRow);
-                dbc.DBAdapter.Update(dbc.DS, "reginfo");
+                int usernum = dbc.GetSequenceValue("seq_usernum");
+                string uname = username.Text;
+                string uphone = userphone.Text;
+                int lockernum = dbc.GetSequenceValue("seq_lockernum");
+                string emnum = empnum.Text;
+                string edate = enddate.Text;
+                string rtype = regtype.Text;
+                string rfee = regfee.Text;
+                string pdate = ptdate.Text;
+                string pnum = ptnum.Text;
+                string rdate = regdate.Text;
+
+
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"INSERT INTO userinfo (usernum, username, userphone, lockernum, empnum, expiredate, regtype, regfee, ptdate, ptnum, regdate ) VALUES('{usernum}','{uname}','{uphone}','{lockernum}','{emnum}' ,TO_DATE('{edate}'), '{rtype}', '{rfee}', TO_DATE('{pdate}'), '{pnum}', TO_DATE('{rdate}')) ";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("추가 되었습니다!");
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -52,55 +64,24 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void updateBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                dbc.Reginfo = dbc.DS.Tables["reginfo"];
-                DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Reginfo.Columns["regnum"];
-                dbc.Reginfo.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Reginfo.Rows.Find(SelectedRowIndex);
-                currRow.BeginEdit();
-                //currRow["regnum"] = regnum.Text;
-                currRow["regdate"] = regdate.Text;
-                currRow["regtype"] = regtype.Text;
-                currRow["regfee"] = regfee.Text;
-                //currRow["usernum"] = usernum.Text;
-                currRow["username"] = username.Text;
-                currRow["userphone"] = userphone.Text;
-                //currRow["lockernum"] = lockernum.Text;
-                currRow.EndEdit();
-                DataSet UpdatedSet = dbc.DS.GetChanges(DataRowState.Modified);
-                if (UpdatedSet.HasErrors)
-                { MessageBox.Show("변경된 데이터에 문제가 있습니다."); }
-                else
-                {
-                    dbc.DBAdapter.Update(UpdatedSet, "membermanage");
-                    dbc.DS.AcceptChanges();
-                }
-                DBGrid.DataSource = dbc.DS.Tables["membermanage"].DefaultView;
-            }
-            catch (DataException DE)
-            { MessageBox.Show(DE.Message); }
-            catch (Exception DE)
-            { MessageBox.Show(DE.Message); }
+          
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void deleteBtn_Click(object sender, EventArgs e)
         {
             try
             {
-
-                dbc.Reginfo = dbc.DS.Tables["reginfo"];
-                DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Reginfo.Columns["regnum"];
-                dbc.Reginfo.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Reginfo.Rows.Find(SelectedRowIndex);
-                currRow.Delete();
-                dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "reginfo");
-                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
+                string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                OracleConnection conn = new OracleConnection(strConn);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = $"delete from userinfo where usernum = '{RowIndex}'";
+                cmd.ExecuteNonQuery();
+                
+                conn.Close();
             }
             catch (DataException DE)
             {
@@ -131,7 +112,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DS.Clear();
+                dbc.DB_Open();
                 dbc.DBAdapter.Fill(dbc.DS, "reginfo");
                 DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
@@ -147,7 +128,20 @@ namespace WindowsFormsApp2
 
         private void member_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                dbc.DB_Open();
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,31 +158,37 @@ namespace WindowsFormsApp2
         {
             try
             {
-                DataTable reginfo = dbc.DS.Tables["reginfo"];
+                RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                DataTable userinfo = dbc.DS.Tables["userinfo"];
                 if (e.RowIndex < 0)
                 {
                     return;
-                }
-                else if (e.RowIndex > reginfo.Rows.Count - 1)
+ }
+                else if (e.RowIndex > userinfo.Rows.Count - 1)
                 {
-                    MessageBox.Show("해당하는 데이터가 존재하지 않습니다.");
-                    return;
+                    MessageBox.Show("해당하는 데이터가 존재하지 않 습니다.");
+                 return;
                 }
-                DataRow currRow = reginfo.Rows[e.RowIndex];
-                empnum.Text = currRow["regnum"].ToString();
-                regdate.Text = currRow["regdate"].ToString();
-                regtype.Text = currRow["regtype"].ToString();
-                usernum.Text = currRow["usernum"].ToString();
-                regfee.Text = currRow["regfee"].ToString();
-                username.Text = currRow["username"].ToString();
-                userphone.Text = currRow["userphone"].ToString();
-                lockernum.Text = currRow["lockernum"].ToString();
-                SelectedRowIndex = currRow["regnum"].ToString();
+                DataRow currRow = userinfo.Rows[e.RowIndex];
+                username.Text = currRow["회원이름"].ToString();
+                userphone.Text = currRow["전화번호"].ToString();
+                enddate.Text = currRow["만기일자"].ToString();
+                regtype.Text = currRow["등록종류"].ToString();
+                regfee.Text = currRow["등록비"].ToString();
+                ptdate.Text = currRow["PT예약일자"].ToString();
+                ptnum.Text = currRow["PT횟수"].ToString();
+                regdate.Text = currRow["등록일자"].ToString();
+                dbc.SelectedRowIndex = Convert.ToInt32(currRow["회원번호"]);
             }
             catch (DataException DE)
-            { MessageBox.Show(DE.Message); }
+            {
+                MessageBox.Show(DE.Message);
+            }
             catch (Exception DE)
-            { MessageBox.Show(DE.Message); }
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -200,6 +200,24 @@ namespace WindowsFormsApp2
         {
             Form8 f = new Form8();
             DialogResult result = f.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dbc.DB_Open_select(username.Text, userphone.Text);
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
     }
 }

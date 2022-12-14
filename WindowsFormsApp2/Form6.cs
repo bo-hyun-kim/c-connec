@@ -17,11 +17,12 @@ namespace WindowsFormsApp2
     public partial class Form6 : Form
     {
         DBClass dbc = new DBClass();
-        Random rand = new Random();
         public Form6()
         {
             InitializeComponent();
-           
+
+
+
         }
         private void button4_Click_2(object sender, EventArgs e)
         {
@@ -47,32 +48,32 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void 메뉴ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,9 +90,9 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "reservation");
-                DBGrid.DataSource = dbc.DS.Tables["reservation"].DefaultView;
+                dbc.DB_ptdate(username.Text, ptdate.Text);
+                dbc.DBAdapter.Fill(dbc.DS, "userinfo");
+                DBGrid.DataSource = dbc.DS.Tables["userinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -110,7 +111,7 @@ namespace WindowsFormsApp2
             {
                 dbc.DB_date_findMember(findTrainer.Text);
                 dbc.DBAdapter.Fill(dbc.DS, "managerinfo");
-                DBGrid2.DataSource = dbc.DS.Tables["managerinfo"].DefaultView;
+                DBGrid3.DataSource = dbc.DS.Tables["managerinfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -125,6 +126,43 @@ namespace WindowsFormsApp2
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                dbc.DB_stock();
+                dbc.DBAdapter.Fill(dbc.DS, "stockinfo");
+                DBGrid2.DataSource = dbc.DS.Tables["stockinfo"].DefaultView;
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+
+        private void DBGrid3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string index = DBGrid3.Rows[e.RowIndex].Cells[0].Value.ToString();
+                dbc.DB_date_all(index);
+                dbc.DBAdapter.Fill(dbc.DS, "userinfo");
+                DBGrid4.DataSource = dbc.DS.Tables["userinfo"].DefaultView;
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
         }
     }
 }
