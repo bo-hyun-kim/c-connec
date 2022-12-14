@@ -45,7 +45,7 @@ namespace 윈프_과제_홀수반_김한영
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = "select r.regnum, u.username, u.userphone, r.regdate,r.regtype, m.empname from managerinfo m, userinfo u, reginfo r where u.usernum = r.usernum and m.empnum = r.empnum";
+                string commandString = "select u.usernum as 회원번호, u.username as 회원이름, u.userphone as 전화번호, u.lockernum as 사물함번호, m.empname as 담당직원, u.expiredate as 만기일자, u.regtype as 등록종류, u.regfee as 등록비, u.ptdate as pt예약일자, u.ptnum as pt횟수, u.regdate as 등록일자 from userinfo u, managerinfo m where m.empnum = u.empnum order by u.usernum";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -55,12 +55,12 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        public void DB_Open_insert(string regdate, string regtype, string regfee, string username, string userphone, string empnum)
+        public void DB_Open_select(string username, string userphone)
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = $"insert all into userinfo values(seq_usernum.nextval,'{username}', '{userphone}', seq_lockernum.nextval) into reginfo values(seq_regrnum.nextval, '{regdate}', '{regtype}', seq_usernum.nextval, '{regfee}', '{empnum}') select u.usernum, u.username, u.userphone, u.lockernum, r.regnum, r.usernum, r.regdate, r.regtype, r.regfee, r.empnum from userinfo u, managerinfo m,reginfo r";
+                string commandString = $"select u.usernum as 회원번호, u.username as 회원이름, u.userphone as 전화번호, u.lockernum as 사물함번호, m.empname as 담당직원, u.expiredate as 만기일자, u.regtype as 등록종류, u.regfee as 등록비, u.ptdate as pt예약일자, u.ptnum as pt횟수, u.regdate as 등록일자 from userinfo u, managerinfo m where m.empnum = u.empnum and u.username = '{username}' and u.userphone = '{userphone}' order by u.usernum";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -70,13 +70,60 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        //일정관리
+        //통화조회 - 트레이너 소속 회원 불러오기
         public void DB_date_findMember(string trainer)
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = $"select u.username, u.userphone from managerinfo m, userinfo u, reginfo r where (m.empname = '{trainer}') and r.empnum = m.empnum and u.usernum = r.usernum";
+                string commandString = $"select u.usernum as 회원번호, u.username as 회원이름, u.userphone as 전화번호, m.empname as 트레이너이름, u.regtype as 등록종류, u.ptnum as pt횟수, u.ptdate as pt예약일자 from managerinfo m, userinfo u where (m.empname = '{trainer}') and u.empnum = m.empnum";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        public void DB_date_all(string index)
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = $"select usernum as 회원번호, username as 회원이름, userphone as 전화번호, lockernum as 사물함번호, expiredate as 만기일자, regtype as 등록종류, regfee as 등록비, ptdate as pt예약일자, ptnum as pt횟수, regdate as 등록일자 from userinfo where usernum = '{index}'";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        //통합조회 - 물품재고 불러오기
+        public void DB_stock()
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = "select prdnum as 물품번호, prdname as 물품명, prdcnt as 물품수량, prdexdate as 유통기한 from stockinfo";
+                DBAdapter = new OracleDataAdapter(commandString, connectionString);
+                MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
+                DS = new DataSet();
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+        //통합조회 - 회원 pt일정 불러오기
+        public void DB_ptdate(string username, string ptdate)
+        {
+            try
+            {
+                string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
+                string commandString = $"select u.username as 회원이름, u.userphone as 전화번호, m.empname as 트레이너이름, u.regtype as 등록종류, u.ptnum as pt횟수, u.ptdate as pt예약일자 from managerinfo m, userinfo u where u.username = '{username}' and u.ptdate = '{ptdate}' and u.empnum = m.empnum";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
