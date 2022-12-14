@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using 윈프_과제_홀수반_김한영;
 using Oracle.DataAccess.Client;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp2
 
@@ -15,7 +16,6 @@ namespace WindowsFormsApp2
 
     public partial class member : Form
     {
-        private int SelectedRowIndex;
         private string RowIndex;
 
         DBClass dbc = new DBClass();
@@ -109,7 +109,7 @@ namespace WindowsFormsApp2
                 cmd.Connection = conn;
                 cmd.CommandText = $"delete from userinfo where usernum = '{RowIndex}'";
                 cmd.ExecuteNonQuery();
-                
+
                 conn.Close();
             }
             catch (DataException DE)
@@ -193,11 +193,11 @@ namespace WindowsFormsApp2
                 if (e.RowIndex < 0)
                 {
                     return;
- }
+                }
                 else if (e.RowIndex > userinfo.Rows.Count - 1)
                 {
                     MessageBox.Show("해당하는 데이터가 존재하지 않 습니다.");
-                 return;
+                    return;
                 }
                 DataRow currRow = userinfo.Rows[e.RowIndex];
                 username.Text = currRow["회원이름"].ToString();
@@ -252,20 +252,37 @@ namespace WindowsFormsApp2
         private void DBGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            username.Text = "";
+            userphone.Text = "";
+            enddate.Text = "";
+            regtype.Text = "";
+            ptdate.Text = "";
+            ptnum.Text = "";
+            regdate.Text = "";
+            regfee.Text = "";
 
             username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //enddate.Text
-            string end  = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            string end = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
             enddate.Text = end.Substring(0, 10);
             regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
             regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
             string pt = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+            if (pt.Length >= 10) { 
             ptdate.Text = pt.Substring(0, 10);
+            }
+            if (DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString() != null) {
             ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
-            string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
-            regdate.Text = rdate.Substring(0, 10);
+            }
+            if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null)
+            {
+                string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
+                if (rdate.Length >= 10)
+                {
+                    regdate.Text = rdate.Substring(0, 10);
+                }
+            }
+            
         }
     }
 }
-
