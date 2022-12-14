@@ -57,12 +57,12 @@ namespace WindowsFormsApp2
             this.button_member.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button_member.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_member.ForeColor = System.Drawing.Color.Gray;
-            this.button_member.Location = new System.Drawing.Point(71, 169);
+            this.button_member.Location = new System.Drawing.Point(56, 187);
             this.button_member.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button_member.Name = "button_member";
             this.button_member.Size = new System.Drawing.Size(164, 84);
             this.button_member.TabIndex = 1;
-            this.button_member.Text = "회원관리";
+            this.button_member.Text = "회원 등록";
             this.button_member.UseVisualStyleBackColor = false;
             this.button_member.UseWaitCursor = true;
             this.button_member.Click += new System.EventHandler(this.button_member_Click);
@@ -74,12 +74,12 @@ namespace WindowsFormsApp2
             this.button2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button2.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(321, 169);
+            this.button2.Location = new System.Drawing.Point(306, 187);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 84);
             this.button2.TabIndex = 3;
-            this.button2.Text = "물품관리";
+            this.button2.Text = "물품 관리";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.UseWaitCursor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -91,12 +91,12 @@ namespace WindowsFormsApp2
             this.button3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button3.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.Gray;
-            this.button3.Location = new System.Drawing.Point(71, 335);
+            this.button3.Location = new System.Drawing.Point(56, 353);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 84);
             this.button3.TabIndex = 4;
-            this.button3.Text = "매출관리";
+            this.button3.Text = "매출 관리";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.UseWaitCursor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -108,12 +108,12 @@ namespace WindowsFormsApp2
             this.button4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button4.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.Color.Gray;
-            this.button4.Location = new System.Drawing.Point(321, 335);
+            this.button4.Location = new System.Drawing.Point(306, 353);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 84);
             this.button4.TabIndex = 5;
-            this.button4.Text = "일정관리";
+            this.button4.Text = "통합 조회";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.UseWaitCursor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -133,7 +133,7 @@ namespace WindowsFormsApp2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(39, 45);
+            this.label1.Location = new System.Drawing.Point(50, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(334, 73);
             this.label1.TabIndex = 9;
@@ -197,23 +197,23 @@ namespace WindowsFormsApp2
             // 도움말ToolStripMenuItem1
             // 
             this.도움말ToolStripMenuItem1.Name = "도움말ToolStripMenuItem1";
-            this.도움말ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.도움말ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.도움말ToolStripMenuItem1.Text = "도움말";
             this.도움말ToolStripMenuItem1.Click += new System.EventHandler(this.도움말ToolStripMenuItem1_Click);
             // 
             // 나가기ToolStripMenuItem
             // 
             this.나가기ToolStripMenuItem.Name = "나가기ToolStripMenuItem";
-            this.나가기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.나가기ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.나가기ToolStripMenuItem.Text = "나가기";
             this.나가기ToolStripMenuItem.Click += new System.EventHandler(this.나가기ToolStripMenuItem_Click_1);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::윈프_과제_홀수반_김한영.Properties.Resources.ddddd;
-            this.pictureBox1.Location = new System.Drawing.Point(561, 180);
+            this.pictureBox1.Location = new System.Drawing.Point(558, 212);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 213);
+            this.pictureBox1.Size = new System.Drawing.Size(281, 272);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;

@@ -21,6 +21,7 @@ namespace WindowsFormsApp2
         public Form6()
         {
             InitializeComponent();
+           
         }
         private void button4_Click_2(object sender, EventArgs e)
         {
@@ -28,7 +29,7 @@ namespace WindowsFormsApp2
             {
                 dbc.DS.Clear();
                 dbc.DBAdapter.Fill(dbc.DS, "reservation");
-                dataGridView1.DataSource = dbc.DS.Tables["reservation"].DefaultView;
+                DBGrid.DataSource = dbc.DS.Tables["reservation"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -90,7 +91,7 @@ namespace WindowsFormsApp2
             {
                 dbc.DS.Clear();
                 dbc.DBAdapter.Fill(dbc.DS, "reservation");
-                dataGridView1.DataSource = dbc.DS.Tables["reservation"].DefaultView;
+                DBGrid.DataSource = dbc.DS.Tables["reservation"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -100,6 +101,29 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show(DE.Message);
             }
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                dbc.DB_date_findMember(findTrainer.Text);
+                dbc.DBAdapter.Fill(dbc.DS, "managerinfo");
+                DBGrid2.DataSource = dbc.DS.Tables["managerinfo"].DefaultView;
+            }
+            catch (DataException DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+            catch (Exception DE)
+            {
+                MessageBox.Show(DE.Message);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

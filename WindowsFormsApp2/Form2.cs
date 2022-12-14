@@ -21,28 +21,26 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             dbc.DB_Open();
-            dbc.DB_Access();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "membermanage");
-                DataTable mmTable = dbc.DS.Tables["membermanage"];
+                dbc.DB_Open_insert(regdate.Text, regtype.Text, regfee.Text, username.Text, userphone.Text, empnum.Text);
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DataTable mmTable = dbc.DS.Tables["reginfo"];
                 DataRow newRow = mmTable.NewRow();
-                newRow["user_no"] = Convert.ToInt32(1);
-                newRow["uname"] = username.Text;
-                newRow["uphone"] = userphone.Text;
-                newRow["lockernum"] = lockernum.Text;
-                newRow["u_startdate"] = startDate.Text;
-                newRow["u_memperiod"] = regtype.Text;
-                newRow["ukind"] = kind.Text;
-                newRow["ucost"] = regfee.Text;
+                //newRow["regnum"] = "seq_usernum.nextval";
+                newRow["regdate"] = regdate.Text;
+                newRow["regtype"] = regtype.Text;
+                newRow["regfee"] =  regfee.Text;
+                //newRow["usernum"] = 2;
+                newRow["username"] = username.Text;
+                newRow["userphone"] = userphone.Text;
+                newRow["empnum"] = empnum.Text;
                 mmTable.Rows.Add(newRow);
-                dbc.DBAdapter.Update(dbc.DS, "membermanage");
+                dbc.DBAdapter.Update(dbc.DS, "reginfo");
             }
             catch (DataException DE)
             {
@@ -59,20 +57,20 @@ namespace WindowsFormsApp2
             try
             {
 
-                dbc.Membermanage = dbc.DS.Tables["membermanage"];
+                dbc.Reginfo = dbc.DS.Tables["reginfo"];
                 DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Membermanage.Columns["user_no"];
-                dbc.Membermanage.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Membermanage.Rows.Find(SelectedRowIndex);
+                PrimaryKey[0] = dbc.Reginfo.Columns["regnum"];
+                dbc.Reginfo.PrimaryKey = PrimaryKey;
+                DataRow currRow = dbc.Reginfo.Rows.Find(SelectedRowIndex);
                 currRow.BeginEdit();
-               // currRow["user_no"] = text.Text;
-                currRow["uname"] = username.Text;
-                currRow["uphone"] = userphone.Text;
-                currRow["lockernum"] = lockernum.Text;
-                currRow["u_startdate"] = startDate.Text;
-                currRow["u_memperiod"] = regtype.Text;
-                currRow["ukind"] = kind.Text;
-                currRow["ucost"] = regfee.Text;
+                //currRow["regnum"] = regnum.Text;
+                currRow["regdate"] = regdate.Text;
+                currRow["regtype"] = regtype.Text;
+                currRow["regfee"] = regfee.Text;
+                //currRow["usernum"] = usernum.Text;
+                currRow["username"] = username.Text;
+                currRow["userphone"] = userphone.Text;
+                //currRow["lockernum"] = lockernum.Text;
                 currRow.EndEdit();
                 DataSet UpdatedSet = dbc.DS.GetChanges(DataRowState.Modified);
                 if (UpdatedSet.HasErrors)
@@ -95,14 +93,14 @@ namespace WindowsFormsApp2
             try
             {
 
-                dbc.Membermanage = dbc.DS.Tables["membermanage"];
+                dbc.Reginfo = dbc.DS.Tables["reginfo"];
                 DataColumn[] PrimaryKey = new DataColumn[1];
-                PrimaryKey[0] = dbc.Membermanage.Columns["user_no"];
-                dbc.Membermanage.PrimaryKey = PrimaryKey;
-                DataRow currRow = dbc.Membermanage.Rows.Find(SelectedRowIndex);
+                PrimaryKey[0] = dbc.Reginfo.Columns["regnum"];
+                dbc.Reginfo.PrimaryKey = PrimaryKey;
+                DataRow currRow = dbc.Reginfo.Rows.Find(SelectedRowIndex);
                 currRow.Delete();
-                dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "membermanage");
-                DBGrid.DataSource = dbc.DS.Tables["membermanage"].DefaultView;
+                dbc.DBAdapter.Update(dbc.DS.GetChanges(DataRowState.Deleted), "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -134,8 +132,8 @@ namespace WindowsFormsApp2
             try
             {
                 dbc.DS.Clear();
-                dbc.DBAdapter.Fill(dbc.DS, "membermanage");
-                DBGrid.DataSource = dbc.DS.Tables["membermanage"].DefaultView;
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -166,26 +164,26 @@ namespace WindowsFormsApp2
         {
             try
             {
-                DataTable membermanage = dbc.DS.Tables["membermanage"];
+                DataTable reginfo = dbc.DS.Tables["reginfo"];
                 if (e.RowIndex < 0)
                 {
                     return;
                 }
-                else if (e.RowIndex > membermanage.Rows.Count - 1)
+                else if (e.RowIndex > reginfo.Rows.Count - 1)
                 {
                     MessageBox.Show("해당하는 데이터가 존재하지 않습니다.");
                     return;
                 }
-                DataRow currRow = membermanage.Rows[e.RowIndex];
-                //text.Text = currRow["user_no"].ToString();
-                username.Text = currRow["uname"].ToString();
-                userphone.Text = currRow["uphone"].ToString();
+                DataRow currRow = reginfo.Rows[e.RowIndex];
+                empnum.Text = currRow["regnum"].ToString();
+                regdate.Text = currRow["regdate"].ToString();
+                regtype.Text = currRow["regtype"].ToString();
+                usernum.Text = currRow["usernum"].ToString();
+                regfee.Text = currRow["regfee"].ToString();
+                username.Text = currRow["username"].ToString();
+                userphone.Text = currRow["userphone"].ToString();
                 lockernum.Text = currRow["lockernum"].ToString();
-                startDate.Text = currRow["u_startdate"].ToString();
-                regtype.Text = currRow["u_memperiod"].ToString();
-                kind.Text = currRow["ukind"].ToString();
-                regfee.Text = currRow["ucost"].ToString();
-                SelectedRowIndex = currRow["user_no"].ToString();
+                SelectedRowIndex = currRow["regnum"].ToString();
             }
             catch (DataException DE)
             { MessageBox.Show(DE.Message); }
