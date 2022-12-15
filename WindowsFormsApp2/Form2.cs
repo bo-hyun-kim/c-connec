@@ -287,23 +287,24 @@ namespace WindowsFormsApp2
             regdate.Text = "";
             regfee.Text = "";
             empnum.Text = "";
-
+            
             username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string end = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            empnum.Text = DBGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string end = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
             enddate.Text = end.Substring(0, 10);
-            regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-            regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
-            string pt = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+            regtype.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+            regfee.Text = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+            string pt = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
             if (pt.Length >= 10) { 
             ptdate.Text = pt.Substring(0, 10);
             }
-            if (DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString() != null) {
-            ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
+            if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null) {
+            ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
             }
-            if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null)
+            if (DBGrid.Rows[e.RowIndex].Cells[11].Value.ToString() != null)
             {
-                string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
+                string rdate = DBGrid.Rows[e.RowIndex].Cells[11].Value.ToString();
                 if (rdate.Length >= 10)
                 {
                     regdate.Text = rdate.Substring(0, 10);
