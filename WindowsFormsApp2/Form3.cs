@@ -39,6 +39,17 @@ namespace WindowsFormsApp2
             dbc.DBAdapter.Fill(dbc.DS, "admin");
             DataTable ManagerTable = dbc.DS.Tables["admin"];
 
+            if (textBox_ID.Text == "")
+            {
+                MessageBox.Show("ID를 입력해주세요!");
+                return;
+            }
+            if(textBox_PW.Text == "")
+            {
+                MessageBox.Show("비밀번호를 입력해주세요!");
+                return;
+            }
+
             for (int i = 0; i < ManagerTable.Rows.Count; i++)
             {
                 DataRow currRow = ManagerTable.Rows[i];
