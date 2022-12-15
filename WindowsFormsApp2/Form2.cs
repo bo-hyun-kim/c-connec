@@ -251,38 +251,54 @@ namespace WindowsFormsApp2
 
         private void DBGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-            username.Text = "";
-            userphone.Text = "";
-            enddate.Text = "";
-            regtype.Text = "";
-            ptdate.Text = "";
-            ptnum.Text = "";
-            regdate.Text = "";
-            regfee.Text = "";
+           
+                username.Text = "";
+                userphone.Text = "";
+                enddate.Text = "";
+                regtype.Text = "";
+                ptdate.Text = "";
+                ptnum.Text = "";
+                empnum.Text = "";
+                regdate.Text = "";
+                regfee.Text = "";
 
-            username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string end = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-            enddate.Text = end.Substring(0, 10);
-            regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-            regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
-            string pt = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
-            if (pt.Length >= 10) { 
-            ptdate.Text = pt.Substring(0, 10);
-            }
-            if (DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString() != null) {
-            ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
-            }
-            if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null)
-            {
-                string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
-                if (rdate.Length >= 10)
+                RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+                empnum.Text = DBGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                if (DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString() != null)
                 {
-                    regdate.Text = rdate.Substring(0, 10);
+                    string end = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    if (end.Length >= 10)
+                    {
+                        enddate.Text = end.Substring(0, 10);
+                    }
+                }
+                regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+            if (DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString() != null)
+            {
+                string pt = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+                if (pt.Length >= 10)
+                {
+                    ptdate.Text = pt.Substring(0, 10);
                 }
             }
-            
+                    if (DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString() != null)
+                    {
+                        ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
+                    }
+                    if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null)
+                    {
+                        string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
+                        if (rdate.Length >= 10)
+                        {
+                            regdate.Text = rdate.Substring(0, 10);
+                        }
+                    }
         }
     }
-}
+    }
+
+

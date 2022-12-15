@@ -31,12 +31,12 @@ namespace WindowsFormsApp2
         {
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.ptdate = new System.Windows.Forms.TextBox();
-            this.username = new System.Windows.Forms.TextBox();
             this.DBGrid = new System.Windows.Forms.DataGridView();
             this.일정조회 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.DBGrid4 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.findTrainer = new System.Windows.Forms.TextBox();
@@ -45,8 +45,6 @@ namespace WindowsFormsApp2
             this.물품조회 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.DBGrid2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).BeginInit();
             this.일정조회.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,7 +56,7 @@ namespace WindowsFormsApp2
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(478, 88);
+            this.button4.Location = new System.Drawing.Point(269, 36);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 33);
@@ -71,48 +69,30 @@ namespace WindowsFormsApp2
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 9F);
-            this.label3.Location = new System.Drawing.Point(227, 91);
+            this.label3.Location = new System.Drawing.Point(30, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 27);
+            this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 30;
             this.label3.Text = "예약 일자";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 135);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 18);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "이름";
-            // 
             // ptdate
             // 
-            this.ptdate.Location = new System.Drawing.Point(326, 88);
+            this.ptdate.Location = new System.Drawing.Point(124, 36);
             this.ptdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ptdate.Name = "ptdate";
             this.ptdate.Size = new System.Drawing.Size(127, 28);
             this.ptdate.TabIndex = 27;
             // 
-            // username
-            // 
-            this.username.Location = new System.Drawing.Point(100, 128);
-            this.username.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(127, 28);
-            this.username.TabIndex = 25;
-            // 
             // DBGrid
             // 
             this.DBGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DBGrid.Location = new System.Drawing.Point(33, 134);
+            this.DBGrid.Location = new System.Drawing.Point(33, 75);
             this.DBGrid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DBGrid.Name = "DBGrid";
             this.DBGrid.RowHeadersWidth = 51;
             this.DBGrid.RowTemplate.Height = 27;
-            this.DBGrid.Size = new System.Drawing.Size(805, 175);
+            this.DBGrid.Size = new System.Drawing.Size(805, 254);
             this.DBGrid.TabIndex = 44;
             // 
             // 일정조회
@@ -123,10 +103,10 @@ namespace WindowsFormsApp2
             this.일정조회.Controls.Add(this.ptdate);
             this.일정조회.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.일정조회.Location = new System.Drawing.Point(17, 44);
-            this.일정조회.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.일정조회.Margin = new System.Windows.Forms.Padding(4);
             this.일정조회.Name = "일정조회";
-            this.일정조회.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.일정조회.Size = new System.Drawing.Size(864, 325);
+            this.일정조회.Padding = new System.Windows.Forms.Padding(4);
+            this.일정조회.Size = new System.Drawing.Size(864, 347);
             this.일정조회.TabIndex = 45;
             this.일정조회.TabStop = false;
             this.일정조회.Text = "일정조회";
@@ -142,14 +122,34 @@ namespace WindowsFormsApp2
             this.groupBox1.Controls.Add(this.DBGrid3);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(889, 44);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(896, 742);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "트레이너 소속 회원";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 9F);
+            this.label4.Location = new System.Drawing.Point(36, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 18);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "담당 회원 리스트";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 9F);
+            this.label2.Location = new System.Drawing.Point(36, 475);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 18);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "회원 상세정보";
             // 
             // DBGrid4
             // 
@@ -187,7 +187,7 @@ namespace WindowsFormsApp2
             this.label5.Location = new System.Drawing.Point(38, 59);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 27);
+            this.label5.Size = new System.Drawing.Size(103, 18);
             this.label5.TabIndex = 47;
             this.label5.Text = "트레이너명";
             // 
@@ -209,9 +209,9 @@ namespace WindowsFormsApp2
             this.물품조회.Controls.Add(this.DBGrid2);
             this.물품조회.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.물품조회.Location = new System.Drawing.Point(17, 399);
-            this.물품조회.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.물품조회.Margin = new System.Windows.Forms.Padding(4);
             this.물품조회.Name = "물품조회";
-            this.물품조회.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.물품조회.Padding = new System.Windows.Forms.Padding(4);
             this.물품조회.Size = new System.Drawing.Size(864, 387);
             this.물품조회.TabIndex = 46;
             this.물품조회.TabStop = false;
@@ -219,7 +219,7 @@ namespace WindowsFormsApp2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(359, 324);
+            this.button1.Location = new System.Drawing.Point(343, 318);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 51);
@@ -239,26 +239,6 @@ namespace WindowsFormsApp2
             this.DBGrid2.Size = new System.Drawing.Size(805, 261);
             this.DBGrid2.TabIndex = 44;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 9F);
-            this.label2.Location = new System.Drawing.Point(36, 475);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 27);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "회원 상세정보";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 9F);
-            this.label4.Location = new System.Drawing.Point(36, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 27);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "담당 회원 리스트";
-            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -266,14 +246,12 @@ namespace WindowsFormsApp2
             this.ClientSize = new System.Drawing.Size(1803, 805);
             this.Controls.Add(this.물품조회);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.username);
             this.Controls.Add(this.일정조회);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "조회관리";
+            this.Text = "통합 조회";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).EndInit();
             this.일정조회.ResumeLayout(false);
@@ -285,16 +263,13 @@ namespace WindowsFormsApp2
             this.물품조회.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DBGrid2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ptdate;
-        private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.DataGridView DBGrid;
         private System.Windows.Forms.GroupBox 일정조회;
         private System.Windows.Forms.GroupBox groupBox1;

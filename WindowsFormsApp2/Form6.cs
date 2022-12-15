@@ -90,7 +90,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DB_ptdate(username.Text, ptdate.Text);
+                dbc.DB_ptdate(ptdate.Text);
                 dbc.DBAdapter.Fill(dbc.DS, "userinfo");
                 DBGrid.DataSource = dbc.DS.Tables["userinfo"].DefaultView;
             }

@@ -87,6 +87,7 @@ namespace WindowsFormsApp2
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(515, 295);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -106,7 +107,7 @@ namespace WindowsFormsApp2
             this.label2.Location = new System.Drawing.Point(64, 174);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 27);
+            this.label2.Size = new System.Drawing.Size(91, 18);
             this.label2.TabIndex = 25;
             this.label2.Text = "물품 매출";
             // 
