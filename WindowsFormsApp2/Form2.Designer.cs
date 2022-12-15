@@ -54,13 +54,14 @@ namespace WindowsFormsApp2
             this.label9 = new System.Windows.Forms.Label();
             this.regdate = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // username
             // 
             this.username.Location = new System.Drawing.Point(107, 32);
-            this.username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.username.Margin = new System.Windows.Forms.Padding(4);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(125, 28);
             this.username.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace WindowsFormsApp2
             // userphone
             // 
             this.userphone.Location = new System.Drawing.Point(339, 34);
-            this.userphone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userphone.Margin = new System.Windows.Forms.Padding(4);
             this.userphone.Name = "userphone";
             this.userphone.Size = new System.Drawing.Size(125, 28);
             this.userphone.TabIndex = 2;
@@ -96,7 +97,7 @@ namespace WindowsFormsApp2
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(41, 202);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 34);
             this.button1.TabIndex = 7;
@@ -107,7 +108,7 @@ namespace WindowsFormsApp2
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(160, 202);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 34);
             this.button2.TabIndex = 8;
@@ -137,24 +138,24 @@ namespace WindowsFormsApp2
             // 
             // regtype
             // 
-            this.regtype.Location = new System.Drawing.Point(563, 90);
-            this.regtype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.regtype.Location = new System.Drawing.Point(569, 90);
+            this.regtype.Margin = new System.Windows.Forms.Padding(4);
             this.regtype.Name = "regtype";
-            this.regtype.Size = new System.Drawing.Size(125, 28);
+            this.regtype.Size = new System.Drawing.Size(119, 28);
             this.regtype.TabIndex = 18;
             // 
             // enddate
             // 
             this.enddate.Location = new System.Drawing.Point(820, 30);
-            this.enddate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enddate.Margin = new System.Windows.Forms.Padding(4);
             this.enddate.Name = "enddate";
             this.enddate.Size = new System.Drawing.Size(125, 28);
             this.enddate.TabIndex = 17;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1040, 202);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(941, 202);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 34);
             this.button4.TabIndex = 23;
@@ -165,7 +166,7 @@ namespace WindowsFormsApp2
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(279, 202);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 34);
             this.button3.TabIndex = 9;
@@ -198,7 +199,7 @@ namespace WindowsFormsApp2
             // empnum
             // 
             this.empnum.Location = new System.Drawing.Point(820, 93);
-            this.empnum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.empnum.Margin = new System.Windows.Forms.Padding(4);
             this.empnum.Name = "empnum";
             this.empnum.Size = new System.Drawing.Size(125, 28);
             this.empnum.TabIndex = 25;
@@ -216,7 +217,7 @@ namespace WindowsFormsApp2
             // regfee
             // 
             this.regfee.Location = new System.Drawing.Point(107, 96);
-            this.regfee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.regfee.Margin = new System.Windows.Forms.Padding(4);
             this.regfee.Name = "regfee";
             this.regfee.Size = new System.Drawing.Size(123, 28);
             this.regfee.TabIndex = 27;
@@ -224,7 +225,7 @@ namespace WindowsFormsApp2
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(1019, 614);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 34);
             this.button5.TabIndex = 31;
@@ -245,7 +246,7 @@ namespace WindowsFormsApp2
             // ptnum
             // 
             this.ptnum.Location = new System.Drawing.Point(1053, 30);
-            this.ptnum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptnum.Margin = new System.Windows.Forms.Padding(4);
             this.ptnum.Name = "ptnum";
             this.ptnum.Size = new System.Drawing.Size(97, 28);
             this.ptnum.TabIndex = 34;
@@ -263,7 +264,7 @@ namespace WindowsFormsApp2
             // ptdate
             // 
             this.ptdate.Location = new System.Drawing.Point(339, 92);
-            this.ptdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptdate.Margin = new System.Windows.Forms.Padding(4);
             this.ptdate.Name = "ptdate";
             this.ptdate.Size = new System.Drawing.Size(125, 28);
             this.ptdate.TabIndex = 36;
@@ -281,15 +282,15 @@ namespace WindowsFormsApp2
             // regdate
             // 
             this.regdate.Location = new System.Drawing.Point(569, 34);
-            this.regdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.regdate.Margin = new System.Windows.Forms.Padding(4);
             this.regdate.Name = "regdate";
             this.regdate.Size = new System.Drawing.Size(120, 28);
             this.regdate.TabIndex = 38;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1046, 99);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Location = new System.Drawing.Point(969, 94);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(106, 34);
             this.button6.TabIndex = 41;
@@ -297,11 +298,23 @@ namespace WindowsFormsApp2
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1053, 202);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(106, 34);
+            this.button7.TabIndex = 42;
+            this.button7.Text = "초기화";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 666);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.regdate);
@@ -328,7 +341,7 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.userphone);
             this.Controls.Add(this.username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "member";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "등록관리";
@@ -365,5 +378,6 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox regdate;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

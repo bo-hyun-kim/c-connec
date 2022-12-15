@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
             // 
             // btnSell
             // 
-            this.btnSell.Location = new System.Drawing.Point(454, 467);
+            this.btnSell.Location = new System.Drawing.Point(455, 464);
             this.btnSell.Margin = new System.Windows.Forms.Padding(4);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(114, 37);
@@ -60,7 +60,7 @@ namespace WindowsFormsApp2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(318, 466);
+            this.btnDelete.Location = new System.Drawing.Point(319, 462);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(107, 39);
@@ -71,7 +71,7 @@ namespace WindowsFormsApp2
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(184, 467);
+            this.btnAdd.Location = new System.Drawing.Point(184, 464);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(111, 38);
@@ -157,7 +157,7 @@ namespace WindowsFormsApp2
             // 
             // btnData
             // 
-            this.btnData.Location = new System.Drawing.Point(591, 469);
+            this.btnData.Location = new System.Drawing.Point(590, 464);
             this.btnData.Margin = new System.Windows.Forms.Padding(4);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(112, 37);
@@ -168,14 +168,14 @@ namespace WindowsFormsApp2
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(733, 474);
+            this.textBox1.Location = new System.Drawing.Point(726, 471);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 28);
             this.textBox1.TabIndex = 36;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(53, 468);
+            this.button1.Location = new System.Drawing.Point(53, 464);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 38);

@@ -53,6 +53,9 @@ namespace WindowsFormsApp2
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("추가 되었습니다!");
                 conn.Close();
+                dbc.DB_Open();
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -77,7 +80,6 @@ namespace WindowsFormsApp2
                 string pnum = ptnum.Text;
                 string rdate = regdate.Text;
 
-
                 string strConn = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
                 OracleConnection conn = new OracleConnection(strConn);
                 conn.Open();
@@ -87,6 +89,9 @@ namespace WindowsFormsApp2
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("수정 되었습니다!");
                 conn.Close();
+                dbc.DB_Open();
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -109,8 +114,11 @@ namespace WindowsFormsApp2
                 cmd.Connection = conn;
                 cmd.CommandText = $"delete from userinfo where usernum = '{RowIndex}'";
                 cmd.ExecuteNonQuery();
-
+                MessageBox.Show("삭제 되었습니다!");
                 conn.Close();
+                dbc.DB_Open();
+                dbc.DBAdapter.Fill(dbc.DS, "reginfo");
+                DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
             catch (DataException DE)
             {
@@ -235,7 +243,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                dbc.DB_Open_select(username.Text, userphone.Text);
+                dbc.DB_Open_select(username.Text);
                 dbc.DBAdapter.Fill(dbc.DS, "reginfo");
                 DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
             }
@@ -251,54 +259,51 @@ namespace WindowsFormsApp2
 
         private void DBGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-                username.Text = "";
-                userphone.Text = "";
-                enddate.Text = "";
-                regtype.Text = "";
-                ptdate.Text = "";
-                ptnum.Text = "";
-                empnum.Text = "";
-                regdate.Text = "";
-                regfee.Text = "";
+            RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            username.Text = "";
+            userphone.Text = "";
+            enddate.Text = "";
+            regtype.Text = "";
+            ptdate.Text = "";
+            ptnum.Text = "";
+            regdate.Text = "";
+            regfee.Text = "";
 
-                RowIndex = DBGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                empnum.Text = DBGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-                username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-                userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-                if (DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString() != null)
-                {
-                    string end = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    if (end.Length >= 10)
-                    {
-                        enddate.Text = end.Substring(0, 10);
-                    }
-                }
-                regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-                    regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
-
-            if (DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString() != null)
+            username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string end = DBGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            enddate.Text = end.Substring(0, 10);
+            regtype.Text = DBGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
+            regfee.Text = DBGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+            string pt = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+            if (pt.Length >= 10) { 
+            ptdate.Text = pt.Substring(0, 10);
+            }
+            if (DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString() != null) {
+            ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
+            }
+            if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null)
             {
-                string pt = DBGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
-                if (pt.Length >= 10)
+                string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
+                if (rdate.Length >= 10)
                 {
-                    ptdate.Text = pt.Substring(0, 10);
+                    regdate.Text = rdate.Substring(0, 10);
                 }
             }
-                    if (DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString() != null)
-                    {
-                        ptnum.Text = DBGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
-                    }
-                    if (DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString() != null)
-                    {
-                        string rdate = DBGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
-                        if (rdate.Length >= 10)
-                        {
-                            regdate.Text = rdate.Substring(0, 10);
-                        }
-                    }
+            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            username.Text = "";
+            userphone.Text = "";
+            enddate.Text = "";
+            regtype.Text = "";
+            ptdate.Text = "";
+            ptnum.Text = "";
+            regdate.Text = "";
+            regfee.Text = "";
+
         }
     }
-    }
-
-
+}

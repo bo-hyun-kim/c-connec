@@ -45,6 +45,9 @@ namespace 윈프_과제_홀수반_김한영
                 cmd.CommandText = $"INSERT INTO managerinfo(empnum,empname,empaddr,empemail) VALUES('{seq}','{empname}','{empaddr}','{empemail}') ";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                managername.Text = "";
+                addr.Text = "";
+                email.Text = "";
                 dbc.DB_Open_Trainer();
                 dbc.DBAdapter.Fill(dbc.DS, "trainer");
                 dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
@@ -75,6 +78,10 @@ namespace 윈프_과제_홀수반_김한영
                 cmd.CommandText = $"update managerinfo set empname = '{empname}', empaddr= '{empaddr}', empemail= '{empemail}' where empnum = '{SelectedRowIndex}'";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                managername.Text = "";
+                addr.Text = "";
+                email.Text = "";
+                textBox2.Text = "";
                 dbc.DB_Open_Trainer();
                 dbc.DBAdapter.Fill(dbc.DS, "trainer");
                 dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;
@@ -102,6 +109,10 @@ namespace 윈프_과제_홀수반_김한영
                 cmd.CommandText = $"delete from managerinfo where empnum = {SelectedRowIndex}";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                managername.Text = "";
+                addr.Text = "";
+                email.Text = "";
+                textBox2.Text = "";
                 dbc.DB_Open_Trainer();
                 dbc.DBAdapter.Fill(dbc.DS, "trainer");
                 dataGridView1.DataSource = dbc.DS.Tables["trainer"].DefaultView;

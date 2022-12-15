@@ -85,6 +85,7 @@ namespace WindowsFormsApp2
 
         private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label3.Text = " ";
             this.Show();
 
             Form3 form3 = new Form3();

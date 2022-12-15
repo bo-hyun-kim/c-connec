@@ -67,6 +67,10 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','0')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                textBox_prdname.Text = "";
+                textBox_prdcnt.Text = "";
+                textBox_prdcost.Text = "";
+                textBox_prddate.Text = "";
                 dbc.DB_Open_Product();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
                 PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
@@ -98,6 +102,10 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','1')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                textBox_prdname.Text = "";
+                textBox_prdcnt.Text = "";
+                textBox_prdcost.Text = "";
+                textBox_prddate.Text = "";
                 dbc.DB_Open_Product();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
                 PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
@@ -130,6 +138,10 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"INSERT INTO prdtradeinfo(prdno,prdname,prdcnt,prdcost,prddate,prdendno) VALUES('{seq}','{prdname}','{prdcnt}','{prdcost}','{prddate}','2')";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                textBox_prdname.Text = "";
+                textBox_prdcnt.Text = "";
+                textBox_prdcost.Text = "";
+                textBox_prddate.Text = "";
                 dbc.DB_Open_Product();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
                 PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;
@@ -156,6 +168,11 @@ namespace WindowsFormsApp2
                 cmd.CommandText = $"delete from prdtradeinfo where prdno = {SelectedRowIndex}";
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                textBox_prdname.Text = "";
+                textBox_prdcnt.Text = "";
+                textBox_prdcost.Text = "";
+                textBox_prddate.Text = "";
+                textBox1.Text = "";
                 dbc.DB_Open_Product();
                 dbc.DBAdapter.Fill(dbc.DS, "prdtradeinfo");
                 PrdGridView.DataSource = dbc.DS.Tables["prdtradeinfo"].DefaultView;

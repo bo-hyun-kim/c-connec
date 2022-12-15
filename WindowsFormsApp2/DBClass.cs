@@ -55,12 +55,12 @@ namespace 윈프_과제_홀수반_김한영
                 MessageBox.Show(DE.Message);
             }
         }
-        public void DB_Open_select(string username, string userphone)
+        public void DB_Open_select(string username)
         {
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = $"select u.usernum as 회원번호, u.username as 회원이름, u.userphone as 전화번호, u.lockernum as 사물함번호, u.empnum as 직원번호, u.expiredate as 만기일자, u.regtype as 등록종류, u.regfee as 등록비, u.ptdate as pt예약일자, u.ptnum as pt횟수, u.regdate as 등록일자 from userinfo u, managerinfo m where m.empnum = u.empnum and u.username = '{username}' and u.userphone = '{userphone}'  ";
+                string commandString = $"select u.usernum as 회원번호, u.username as 회원이름, u.userphone as 전화번호, u.lockernum as 사물함번호, u.empnum as 직원번호, u.expiredate as 만기일자, u.regtype as 등록종류, u.regfee as 등록비, u.ptdate as pt예약일자, u.ptnum as pt횟수, u.regdate as 등록일자 from userinfo u, managerinfo m where m.empnum = u.empnum and u.username = '{username}' ";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
@@ -123,7 +123,7 @@ namespace 윈프_과제_홀수반_김한영
             try
             {
                 string connectionString = "User Id=hong1; Password=1111; Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = xe) ) );";
-                string commandString = $"select u.username as 회원이름, u.userphone as 전화번호, m.empname as 트레이너이름, u.regtype as 등록종류, u.ptnum as pt횟수, u.ptdate as pt예약일자 from managerinfo m, userinfo u where u.ptdate = '{ptdate}' and u.empnum = m.empnum";
+                string commandString = $"select u.username as 회원이름, u.userphone as 전화번호, m.empname as 트레이너이름, u.regtype as 등록종류, u.ptnum as 남은pt횟수, u.ptdate as pt예약일자 from managerinfo m, userinfo u where u.ptdate = '{ptdate}' and u.empnum = m.empnum";
                 DBAdapter = new OracleDataAdapter(commandString, connectionString);
                 MyCommandBuilder = new OracleCommandBuilder(DBAdapter);
                 DS = new DataSet();
