@@ -58,12 +58,12 @@ namespace WindowsFormsApp2
             this.button_member.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button_member.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_member.ForeColor = System.Drawing.Color.Gray;
-            this.button_member.Location = new System.Drawing.Point(80, 280);
+            this.button_member.Location = new System.Drawing.Point(395, 280);
             this.button_member.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button_member.Name = "button_member";
             this.button_member.Size = new System.Drawing.Size(234, 126);
             this.button_member.TabIndex = 1;
-            this.button_member.Text = "회원 등록";
+            this.button_member.Text = "회원 관리";
             this.button_member.UseVisualStyleBackColor = false;
             this.button_member.UseWaitCursor = true;
             this.button_member.Click += new System.EventHandler(this.button_member_Click);
@@ -75,7 +75,7 @@ namespace WindowsFormsApp2
             this.button2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button2.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(394, 280);
+            this.button2.Location = new System.Drawing.Point(395, 477);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(234, 126);
@@ -109,7 +109,7 @@ namespace WindowsFormsApp2
             this.button4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button4.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.Color.Gray;
-            this.button4.Location = new System.Drawing.Point(394, 477);
+            this.button4.Location = new System.Drawing.Point(80, 280);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(234, 126);

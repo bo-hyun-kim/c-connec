@@ -344,7 +344,7 @@ namespace WindowsFormsApp2
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "member";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "등록관리";
+            this.Text = "회원관리";
             this.Load += new System.EventHandler(this.member_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).EndInit();
             this.ResumeLayout(false);

@@ -251,7 +251,7 @@ namespace WindowsFormsApp2
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "통합 조회";
+            this.Text = "통합조회";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DBGrid)).EndInit();
             this.일정조회.ResumeLayout(false);
