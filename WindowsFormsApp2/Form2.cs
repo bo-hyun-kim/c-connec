@@ -56,6 +56,15 @@ namespace WindowsFormsApp2
                 dbc.DB_Open();
                 dbc.DBAdapter.Fill(dbc.DS, "reginfo");
                 DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
+                username.Text = "";
+                userphone.Text = "";
+                enddate.Text = "";
+                regtype.Text = "";
+                ptdate.Text = "";
+                ptnum.Text = "";
+                regdate.Text = "";
+                regfee.Text = "";
+                empnum.Text = "";
             }
             catch (DataException DE)
             {
@@ -119,6 +128,15 @@ namespace WindowsFormsApp2
                 dbc.DB_Open();
                 dbc.DBAdapter.Fill(dbc.DS, "reginfo");
                 DBGrid.DataSource = dbc.DS.Tables["reginfo"].DefaultView;
+                username.Text = "";
+                userphone.Text = "";
+                enddate.Text = "";
+                regtype.Text = "";
+                ptdate.Text = "";
+                ptnum.Text = "";
+                regdate.Text = "";
+                regfee.Text = "";
+                empnum.Text = "";
             }
             catch (DataException DE)
             {
@@ -268,6 +286,7 @@ namespace WindowsFormsApp2
             ptnum.Text = "";
             regdate.Text = "";
             regfee.Text = "";
+            empnum.Text = "";
 
             username.Text = DBGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             userphone.Text = DBGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -303,6 +322,7 @@ namespace WindowsFormsApp2
             ptnum.Text = "";
             regdate.Text = "";
             regfee.Text = "";
+            empnum.Text = "";
 
         }
     }
