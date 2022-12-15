@@ -24,6 +24,22 @@ namespace 윈프_과제_홀수반_김한영
         {
             try
             {
+                if (textBox1.Text == "")
+                {
+                    MessageBox.Show("가입할 ID를 입력해주세요!");
+                    return;
+                }
+                if (textBox2.Text == "")
+                {
+                    MessageBox.Show("가입할 비밀번호를 입력해주세요!");
+                    return;
+                }
+                if (textBox3.Text == "")
+                {
+                    MessageBox.Show("가입할 이름을 입력해주세요!");
+                    return;
+                }
+
                 int seq = dbc.GetSequenceValue("MANAGER_SEQ");
                 string adminid = textBox1.Text;
                 string adminpasswd = textBox2.Text;
